@@ -44,6 +44,30 @@
 <a target="_blank" href="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" style="display: inline-block;"><img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="42" height="42" /></a>
 <a target="_blank" href="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" style="display: inline-block;"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="42" height="42" /></a>
 <a target="_blank" href="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" style="display: inline-block;"><img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="42" height="42" /></a></p>
+
+<h2>📜 Certifications </h2>
+
+| Certification | Link |
+|---------------|------|
+| CRUD Operations in MongoDB | https://www.credly.com/badges/331488fe-378b-4ad8-84e8-1d12a1383b35/linked_in_profile |
+| Data Visualization | https://api.badgr.io/public/assertions/6947becd3f3fc8fa76df381e |
+| Data Wrangling | https://api.badgr.io/public/assertions/6947bf4792fd79c203ec7b4f |
+| Deep Learning | https://api.badgr.io/public/assertions/6947bf323f3fc8fa76df3ac3 |
+| Exploratory Data Analysis (EDA) | https://api.badgr.io/public/assertions/6947beba3f3fc8fa76df37b9 |
+| GitHub | https://api.badgr.io/public/assertions/6947c000da35354bb06c058c |
+| I am a Data Scientist | https://api.badgr.io/public/assertions/6947bf60da35354bb06c0290 |
+| MLOps | https://api.badgr.io/public/assertions/6947bfd83f3fc8fa76df3dab |
+| Machine Learning | https://api.badgr.io/public/assertions/6947bf183f3fc8fa76df3a1b |
+| Machine Learning Engineer | https://api.badgr.io/public/assertions/6947bfae3f3fc8fa76df3c9e |
+| Maths for Data Science | https://api.badgr.io/public/assertions/6947bf7492fd79c203ec7ce6 |
+| NLP (Natural Language Processing) | https://api.badgr.io/public/assertions/6947bfed0312879c54d5f80e |
+| Object Oriented Programming | https://api.badgr.io/public/assertions/6947c014da35354bb06c05e9 |
+| Python Fundamentals | https://api.badgr.io/public/assertions/6947bea1da35354bb06bfd78 |
+| SQL | https://api.badgr.io/public/assertions/6947bf9cda35354bb06c03c7 |
+| TensorFlow & Keras | https://api.badgr.io/public/assertions/6947bfc23f3fc8fa76df3d49 |
+| Time Series Analysis | https://api.badgr.io/public/assertions/6947bf88da35354bb06c0366 |
+
+
 <h2>⚡️ Where to find me</h2>
 <p><a target="_blank" href="https://www.linkedin.com/in/https://www.linkedin.com/in/luna-p%C3%A9rez-troncoso-0ab21929b/" style="display: inline-block;"><img src="https://img.shields.io/badge/linkedin-logo?style=for-the-badge&logo=linkedin&logoColor=white&color=%230a77b6" alt="linkedin" /></a></p>
 
