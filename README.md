@@ -2,6 +2,8 @@
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Roboto&weight=900&size=30&duration=3000&pause=1000&color=0981F7&background=FFFFFF00&center=true&vCenter=true&width=1245&lines=Data+Scientist;AI+Engineer;Data+Analist)](https://git.io/typing-svg)
 
+<p align="center"><a target="_blank" href="https://www.linkedin.com/in/https://www.linkedin.com/in/luna-p%C3%A9rez-troncoso-0ab21929b/" style="display: inline-block;"><img src="https://img.shields.io/badge/linkedin-logo?style=for-the-badge&logo=linkedin&logoColor=white&color=%230a77b6" alt="linkedin" /></a></p>
+
 <p> 
   
   I'm a **Data Scientist** with a strong foundation in **Artificial Intelligence, data analytics, and computational modeling**, originally shaped through my background in **science and research**. Over time, I’ve transitioned my **analytical and experimental mindset** into the tech field, where I design **data-driven solutions** that **transform complex information into actionable insights**.
@@ -13,7 +15,7 @@
    </p>
    
 <h2>🚀 Languages and Tools I Use</h2>
-<p><a target="_blank" href="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" style="display: inline-block;"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="42" height="42" /></a>
+<p align="center"><a target="_blank" href="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" style="display: inline-block;"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="42" height="42" /></a>
 <a target="_blank" href="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" style="display: inline-block;"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="42" height="42" /></a>
 <a target="_blank" href="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" style="display: inline-block;"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="42" height="42" /></a>
 <a target="_blank" href="https://www.vectorlogo.zone/logos/apache_hadoop/apache_hadoop-icon.svg" style="display: inline-block;"><img src="https://www.vectorlogo.zone/logos/apache_hadoop/apache_hadoop-icon.svg" alt="hadoop" width="42" height="42" /></a>
@@ -67,8 +69,4 @@
 | TensorFlow & Keras | https://api.badgr.io/public/assertions/6947bfc23f3fc8fa76df3d49 |
 | Time Series Analysis | https://api.badgr.io/public/assertions/6947bf88da35354bb06c0366 |
 
-
-<h2>⚡️ Where to find me</h2>
-<p><a target="_blank" href="https://www.linkedin.com/in/https://www.linkedin.com/in/luna-p%C3%A9rez-troncoso-0ab21929b/" style="display: inline-block;"><img src="https://img.shields.io/badge/linkedin-logo?style=for-the-badge&logo=linkedin&logoColor=white&color=%230a77b6" alt="linkedin" /></a></p>
-
-<p><img src="https://github-readme-stats.vercel.app/api/top-langs?username=LunaPerezT&show_icons=true&locale=en&layout=compact" alt="LunaPerezT" /></p>
+<p align="center"><img src="https://github-readme-stats.vercel.app/api/top-langs?username=LunaPerezT&show_icons=true&locale=en&layout=compact" alt="LunaPerezT" /></p>
