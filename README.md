@@ -69,4 +69,31 @@
 | TensorFlow & Keras | https://api.badgr.io/public/assertions/6947bfc23f3fc8fa76df3d49 |
 | Time Series Analysis | https://api.badgr.io/public/assertions/6947bf88da35354bb06c0366 |
 
+## 🚀 Featured Projects
+
+A curated selection of my work in Data Science, ranging from Deep Learning and MLOps to Agentic AI and Data Engineering.
+
+| Project | Description | Tech Stack | Links |
+| :--- | :--- | :--- | :--- |
+| **🧠 Brain Tumor Detection & Segmentation** | End-to-end MLOps pipeline for glioma detection and segmentation in MRI scans. Features ResNet-50 (Classification) and ResUNet (Segmentation). | Python, TensorFlow, Flask, Docker, AWS App Runner | [📁 Code](https://github.com/LunaPerezT/brain-tumor-detection/tree/release) |
+| **🤖 Talk to your Data: Agentic Text-to-SQL** | Conversational AI agent that translates natural language into complex SQL queries using MCP (Model Context Protocol). | Ollama (Qwen3), PostgreSQL, Flask, Node.js, Docker | [📁 Code](https://github.com/LunaPerezT/CATBOX_SQL_AI_Agent) |
+| **📊 Mental Health Global Insights** | Comprehensive EDA of 30 years of global mental health data. Features dynamic geospatial visualizations and DALYs analysis. | Pandas, Plotly, Streamlit, Geospatial Analysis | [📁 Code](https://github.com/LunaPerezT/Mental-Health-EDA-Webpage) <br> [🚀 Demo](https://mental-health-eda-webpage.streamlit.app/) |
+| **🩺 Parkinson’s Disease Prediction** | ML model for early detection of Parkinson's based on clinical and lifestyle factors. Focused on feature importance and interpretability. | Python, Scikit-learn, Machine Learning, Streamlit | [📁 Code](https://github.com/LunaPerezT/Parkinson-s-Disease-Predictive-ML-Model.git) <br> [🚀 Demo](https://parkinsons-disease-ml-predictive-model-webpage.streamlit.app/) |
+| **🗄️ Educational Data Architecture** | Legacy system migration to PostgreSQL. Designed a 3NF relational schema and optimized queries for institutional reporting. | SQL, PostgreSQL, ETL, Relational Modeling | [📁 Code](https://github.com/LunaPerezT/proyecto_SQL_G3) |
+
+
+## 🛠️ Technical Deep Dive
+
+### [Deep Learning & MLOps | Brain Tumor Detection](https://github.com/LunaPerezT/brain-tumor-detection/tree/release)
+This project covers the full Machine Learning lifecycle:
+* **Modeling:** Dual-stage pipeline using state-of-the-art CNN architectures for medical imaging.
+* **Production-Ready:** Served via a Flask API with a Streamlit front-end for human-in-the-loop interaction.
+* **Deployment:** Containerized with Docker and deployed on AWS App Runner for high scalability.
+
+### [Agentic Text-to-SQL Pipeline](https://github.com/LunaPerezT/CATBOX_SQL_AI_Agent)
+An intelligent agent designed to bridge the gap between non-technical users and databases:
+* **Orchestration:** Implemented Model Context Protocol (MCP) to allow the LLM to dynamically inspect metadata.
+* **Security:** Built-in validation layer to prevent SQL injection by restricting execution to `SELECT` statements.
+* **Impact:** Developed in a multidisciplinary environment, ensuring DS logic was integrated into a secure, professional architecture.
+
 <p align="center"><img src="https://github-readme-stats.vercel.app/api/top-langs?username=LunaPerezT&show_icons=true&locale=en&layout=compact" alt="LunaPerezT" /></p>
