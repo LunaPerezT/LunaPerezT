@@ -2,9 +2,17 @@
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Roboto&weight=900&size=30&duration=3000&pause=1000&color=0981F7&background=FFFFFF00&center=true&vCenter=true&width=1245&lines=Data+Scientist;AI+Engineer;Data+Analist)](https://git.io/typing-svg)
 
-<p align="center"><a target="_blank" href="https://www.linkedin.com/in/https://www.linkedin.com/in/luna-p%C3%A9rez-troncoso-0ab21929b/" style="display: inline-block;"><img src="https://img.shields.io/badge/linkedin-logo?style=for-the-badge&logo=linkedin&logoColor=white&color=%230a77b6" alt="linkedin" /></a></p>
-
-<p> 
+<p align="center">
+  <a target="_blank" href="https://lunaperezt.github.io/" style="display: inline-block;">
+    <img src="https://img.shields.io/badge/portfolio-website?style=for-the-badge&logo=google-chrome&logoColor=white&color=black" alt="portfolio" />
+  </a>
+  <a target="_blank" href="https://www.linkedin.com/in/luna-p%C3%A9rez-troncoso-0ab21929b/" style="display: inline-block;">
+    <img src="https://img.shields.io/badge/linkedin-logo?style=for-the-badge&logo=linkedin&logoColor=white&color=%230a77b6" alt="linkedin" />
+  </a>
+  <a href="mailto:lunapereztroncoso2000@gmail.com" style="display: inline-block;">
+    <img src="https://img.shields.io/badge/email-contact?style=for-the-badge&logo=gmail&logoColor=white&color=red" alt="email" />
+  </a>
+</p>
   
   I'm a **Data Scientist** with a strong foundation in **Artificial Intelligence, data analytics, and computational modeling**, originally shaped through my background in **science and research**. Over time, I’ve transitioned my **analytical and experimental mindset** into the tech field, where I design **data-driven solutions** that **transform complex information into actionable insights**.
          
