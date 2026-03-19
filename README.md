@@ -407,7 +407,7 @@ Full legacy system migration with 3NF relational schema design, ETL pipeline con
 
 </div>
 
-
+<!--
 
 ## 🌟 Featured Projects
 
@@ -433,6 +433,6 @@ Full legacy system migration with 3NF relational schema design, ETL pipeline con
   
    </p>
    
-
+-->
 
 
