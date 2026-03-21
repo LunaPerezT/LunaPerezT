@@ -75,10 +75,15 @@ I've transitioned my **analytical and experimental mindset** into the tech field
 <div align="center">
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![R](https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white)
+![RStudio](https://img.shields.io/badge/RStudio-75AADB?style=for-the-badge&logo=rstudio&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
 ![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
 ![Markdown](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)
+
+
 
 </div>
 
@@ -171,6 +176,40 @@ I've transitioned my **analytical and experimental mindset** into the tech field
 ![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
 ![Selenium](https://img.shields.io/badge/Selenium-43B02A?style=for-the-badge&logo=selenium&logoColor=white)
+
+</div>
+
+<h3 align="center">
+  <img src="https://img.shields.io/badge/──────────%20Data%20Analysis%20%26%20BI%20──────────-0D1117?style=for-the-badge&labelColor=0981F7&color=0D1117"/>
+</h3>
+
+<div align="center">
+
+![Power BI](https://img.shields.io/badge/Power%20BI-F2C811?style=for-the-badge&logo=powerbi&logoColor=black)
+![Tableau](https://img.shields.io/badge/Tableau-E97627?style=for-the-badge&logo=tableau&logoColor=white)
+![Excel](https://img.shields.io/badge/Microsoft%20Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white)
+
+</div>
+
+<h3 align="center">
+  <img src="https://img.shields.io/badge/──────────%20Scientific%20%26%20Research%20Tools%20──────────-0D1117?style=for-the-badge&labelColor=7B2FBE&color=0D1117"/>
+</h3>
+
+<div align="center">
+
+![OriginLab](https://img.shields.io/badge/OriginLab-E3002B?style=for-the-badge&logoColor=white)
+![GraphPad Prism](https://img.shields.io/badge/GraphPad%20Prism-0073C2?style=for-the-badge&logoColor=white)
+![SPSS](https://img.shields.io/badge/SPSS%20Statistics-052FAD?style=for-the-badge&logo=ibm&logoColor=white)
+![Fiji ImageJ](https://img.shields.io/badge/Fiji%20ImageJ-00B4D8?style=for-the-badge&logoColor=white)
+
+</div>
+
+<h3 align="center">
+  <img src="https://img.shields.io/badge/──────────%20Design%20%26%20Creative%20──────────-0D1117?style=for-the-badge&labelColor=0981F7&color=0D1117"/>
+</h3>
+
+<div align="center">
+
 ![Illustrator](https://img.shields.io/badge/Illustrator-FF9A00?style=for-the-badge&logo=adobe-illustrator&logoColor=white)
 ![Photoshop](https://img.shields.io/badge/Photoshop-31A8FF?style=for-the-badge&logo=adobe-photoshop&logoColor=white)
 
@@ -482,33 +521,3 @@ A complete **data engineering project** migrating a legacy flat-file institution
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:7B2FBE,100:0981F7&height=130&section=footer&animation=fadeIn" width="100%"/>
 
 </div>
-
-<!--
-
-## 🌟 Featured Projects
-
-<div align="center">
-
-| 🧠 Project | 📝 Description | 🛠 Stack | 🔗 |
-|:---:|:---|:---:|:---:|
-| **Brain Tumor Detection & Segmentation** | End-to-end MLOps pipeline for glioma detection in MRI scans. ResNet-50 + ResUNet | `TF` `Docker` `AWS` `Flask` | [Code](https://github.com/LunaPerezT/brain-tumor-detection/tree/release) |
-| **Agentic Text-to-SQL** | Conversational AI agent translating natural language → SQL via MCP Protocol | `Ollama` `PostgreSQL` `Node.js` | [Code](https://github.com/LunaPerezT/CATBOX_SQL_AI_Agent) |
-| **Mental Health Global Insights** | 30 years of global mental health EDA with geospatial visualizations & DALYs | `Plotly` `Streamlit` `Pandas` | [Code](https://github.com/LunaPerezT/Mental-Health-EDA-Webpage) · [Demo 🚀](https://mental-health-eda-webpage.streamlit.app/) |
-| **Parkinson's Disease Prediction** | ML model for early detection with clinical factors & interpretability focus | `Scikit-learn` `Streamlit` | [Code](https://github.com/LunaPerezT/Parkinson-s-Disease-Predictive-ML-Model) · [Demo 🚀](https://parkinsons-disease-ml-predictive-model-webpage.streamlit.app/) |
-| **Educational Data Architecture** | Legacy system migration to PostgreSQL with 3NF schema design & optimized ETL | `SQL` `PostgreSQL` `ETL` | [Code](https://github.com/LunaPerezT/proyecto_SQL_G3) |
-
-</div>
-
-
-  
-  I'm a **Data Scientist** with a strong foundation in **Artificial Intelligence, data analytics, and computational modeling**, originally shaped through my background in **science and research**. Over time, I’ve transitioned my **analytical and experimental mindset** into the tech field, where I design **data-driven solutions** that **transform complex information into actionable insights**.
-         
-  I have experience working across the **full data pipeline**, from data acquisition, cleaning, and exploration to building, validating, and deploying predictive models. My focus is on **leveraging machine learning and statistical methods to uncover patterns, optimize processes, and support strategic decisions**.
-           
-  What defines my approach is a balance between **technical precision and creativity**. I’m passionate about **connecting raw data with real-world** impact, collaborating with **cross-functional teams**, and communicating insights in a way that drives innovation.
-  
-   </p>
-   
--->
-
-
