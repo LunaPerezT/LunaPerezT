@@ -4,7 +4,7 @@
 
 <div align="center">
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=20&duration=2800&pause=900&color=0981F7&background=00000000&center=true&vCenter=true&multiline=false&repeat=true&width=750&lines=🔬+Science+background+→+AI+superpowers;🧠+Deep+Learning+%7C+MLOps+%7C+Agentic+AI;📊+From+raw+data+to+real+decisions;⚗️+Turning+complexity+into+clarity)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=20&duration=2800&pause=900&color=0981F7&background=00000000&center=true&vCenter=true&multiline=false&repeat=true&width=750&lines=🔬+Science+background+→+AI+engineering;🫀+Medical+AI+%7C+Deep+Learning+%7C+Spark+pipelines;📊+From+raw+data+to+decisions+someone+can+act+on;⚖️+Metrics+that+survive+scrutiny)](https://git.io/typing-svg)
 
 </div>
 
@@ -27,18 +27,20 @@
 
 <h2>🧬 About Me</h2>
 
-I'm a **Data Scientist & AI Engineer** with a strong foundation in **Artificial Intelligence, data analytics, and computational modeling**, originally shaped through a background in **science and research**.
+I'm a **Data Scientist & AI Engineer** with a background in **science and research**, working across the full pipeline — from ingestion and distributed preprocessing to modelling, evaluation and deployment.
 
-I've transitioned my **analytical and experimental mindset** into the tech field, designing **data-driven solutions** that transform complex information into actionable insights — across the full data pipeline, from ingestion to deployment.
+Most of my work sits in **medical and health AI**: ECG arrhythmia classification, MRI segmentation, clinical prediction and public-health analysis — with a recurring interest in what a model's output should actually be *used for*.
+
+I care about **evaluation that survives scrutiny**: baselines that expose what a metric hides, repeated runs before claiming a difference, and decision thresholds derived from cost rather than from a default.
 
 <br>
 
 <table border="0" cellspacing="0" cellpadding="6">
 <tr>
-  <td>🔭</td><td><b>Currently building</b> Agentic AI & MLOps pipelines</td>
+  <td>🔭</td><td><b>Currently building</b> Spark-native ML pipelines & global forecasting models</td>
 </tr>
 <tr>
-  <td>🧠</td><td><b>Passionate about</b> Deep Learning, NLP & Medical AI</td>
+  <td>🫀</td><td><b>Focused on</b> Medical AI, Deep Learning & decision analysis</td>
 </tr>
 <tr>
   <td>⚗️</td><td><b>Background</b> in science turned AI superpowers</td>
@@ -47,7 +49,7 @@ I've transitioned my **analytical and experimental mindset** into the tech field
   <td>📍</td><td><b>Based in</b> Madrid, Spain</td>
 </tr>
 <tr>
-  <td>💡</td><td><b>Philosophy:</b> Connect raw data with real-world impact</td>
+  <td>💡</td><td><b>Philosophy:</b> connect raw data with real-world impact</td>
 </tr>
 </table>
 
@@ -83,8 +85,6 @@ I've transitioned my **analytical and experimental mindset** into the tech field
 ![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
 ![Markdown](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)
 
-
-
 </div>
 
 <h3 align="center">
@@ -97,9 +97,15 @@ I've transitioned my **analytical and experimental mindset** into the tech field
 ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
 ![Keras](https://img.shields.io/badge/Keras-D00000?style=for-the-badge&logo=keras&logoColor=white)
 ![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![XGBoost](https://img.shields.io/badge/XGBoost-EC4E20?style=for-the-badge&logo=python&logoColor=white)
+![LightGBM](https://img.shields.io/badge/LightGBM-9ACD32?style=for-the-badge&logo=python&logoColor=white)
+![CatBoost](https://img.shields.io/badge/CatBoost-FFCC00?style=for-the-badge&logo=python&logoColor=black)
+![Optuna](https://img.shields.io/badge/Optuna-2196F3?style=for-the-badge&logo=python&logoColor=white)
+![imbalanced-learn](https://img.shields.io/badge/imbalanced--learn-7B2FBE?style=for-the-badge&logo=python&logoColor=white)
 ![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
 ![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
 ![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![SciPy](https://img.shields.io/badge/SciPy-8CAAE6?style=for-the-badge&logo=scipy&logoColor=white)
 ![Seaborn](https://img.shields.io/badge/Seaborn-4C72B0?style=for-the-badge&logo=python&logoColor=white)
 ![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=for-the-badge&logo=plotly&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
@@ -107,7 +113,22 @@ I've transitioned my **analytical and experimental mindset** into the tech field
 </div>
 
 <h3 align="center">
-  <img src="https://img.shields.io/badge/──────────%20Agentic%20AI%20%26%20LLM%20Frameworks%20──────────-0D1117?style=for-the-badge&labelColor=0981F7&color=0D1117"/>
+  <img src="https://img.shields.io/badge/──────────%20Data%20Engineering%20%26%20MLOps%20──────────-0D1117?style=for-the-badge&labelColor=0981F7&color=0D1117"/>
+</h3>
+
+<div align="center">
+
+![PySpark](https://img.shields.io/badge/PySpark-E25A1C?style=for-the-badge&logo=apache-spark&logoColor=white)
+![Spark ML](https://img.shields.io/badge/Spark%20ML%20Pipelines-E25A1C?style=for-the-badge&logo=apache-spark&logoColor=white)
+![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=databricks&logoColor=white)
+![Parquet](https://img.shields.io/badge/Parquet%20%2F%20PyArrow-50ABF1?style=for-the-badge&logo=apache&logoColor=white)
+![MLflow](https://img.shields.io/badge/MLflow-0194E2?style=for-the-badge&logo=mlflow&logoColor=white)
+![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white)
+
+</div>
+
+<h3 align="center">
+  <img src="https://img.shields.io/badge/──────────%20Agentic%20AI%20%26%20LLM%20Frameworks%20──────────-0D1117?style=for-the-badge&labelColor=7B2FBE&color=0D1117"/>
 </h3>
 
 <div align="center">
@@ -121,7 +142,7 @@ I've transitioned my **analytical and experimental mindset** into the tech field
 </div>
 
 <h3 align="center">
-  <img src="https://img.shields.io/badge/──────────%20Time%20Series%20%26%20Forecasting%20──────────-0D1117?style=for-the-badge&labelColor=7B2FBE&color=0D1117"/>
+  <img src="https://img.shields.io/badge/──────────%20Time%20Series%20%26%20Forecasting%20──────────-0D1117?style=for-the-badge&labelColor=0981F7&color=0D1117"/>
 </h3>
 
 <div align="center">
@@ -132,11 +153,12 @@ I've transitioned my **analytical and experimental mindset** into the tech field
 ![MLForecast](https://img.shields.io/badge/MLForecast-AB47BC?style=for-the-badge&logo=python&logoColor=white)
 ![Nixtla](https://img.shields.io/badge/Nixtla%20Ecosystem-1A1A2E?style=for-the-badge&logo=python&logoColor=00AAFF)
 ![TimeGPT](https://img.shields.io/badge/TimeGPT-0D1117?style=for-the-badge&logo=openai&logoColor=00AAFF)
+![M5](https://img.shields.io/badge/M5%20metrics%20(WRMSSE%20%2F%20MASE)-2E5E4E?style=for-the-badge&logoColor=white)
 
 </div>
 
 <h3 align="center">
-  <img src="https://img.shields.io/badge/────────────────%20Databases%20────────────────-0D1117?style=for-the-badge&labelColor=0981F7&color=0D1117"/>
+  <img src="https://img.shields.io/badge/────────────────%20Databases%20────────────────-0D1117?style=for-the-badge&labelColor=7B2FBE&color=0D1117"/>
 </h3>
 
 <div align="center">
@@ -151,18 +173,31 @@ I've transitioned my **analytical and experimental mindset** into the tech field
 </div>
 
 <h3 align="center">
-  <img src="https://img.shields.io/badge/────────────%20Cloud%20%26%20DevOps%20────────────-0D1117?style=for-the-badge&labelColor=7B2FBE&color=0D1117"/>
+  <img src="https://img.shields.io/badge/────────────%20Cloud%20%26%20DevOps%20────────────-0D1117?style=for-the-badge&labelColor=0981F7&color=0D1117"/>
 </h3>
 
 <div align="center">
 
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS%20(App%20Runner%20%2F%20S3)-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
 ![GCP](https://img.shields.io/badge/GCP-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
 ![Azure](https://img.shields.io/badge/Azure-0078D4?style=for-the-badge&logo=microsoft-azure&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Hadoop](https://img.shields.io/badge/Hadoop-66CCFF?style=for-the-badge&logo=apache-hadoop&logoColor=black)
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+
+</div>
+
+<h3 align="center">
+  <img src="https://img.shields.io/badge/──────────%20Geospatial%20%26%20Statistics%20──────────-0D1117?style=for-the-badge&labelColor=7B2FBE&color=0D1117"/>
+</h3>
+
+<div align="center">
+
+![GeoPandas](https://img.shields.io/badge/GeoPandas-139C5A?style=for-the-badge&logo=python&logoColor=white)
+![Folium](https://img.shields.io/badge/Folium-77B829?style=for-the-badge&logo=leaflet&logoColor=white)
+![Hypothesis testing](https://img.shields.io/badge/Hypothesis%20Testing-4B0082?style=for-the-badge&logoColor=white)
+![Calibration](https://img.shields.io/badge/Calibration%20%26%20Cost%20Analysis-8B0000?style=for-the-badge&logoColor=white)
 
 </div>
 
@@ -180,7 +215,7 @@ I've transitioned my **analytical and experimental mindset** into the tech field
 </div>
 
 <h3 align="center">
-  <img src="https://img.shields.io/badge/──────────%20Data%20Analysis%20%26%20BI%20──────────-0D1117?style=for-the-badge&labelColor=0981F7&color=0D1117"/>
+  <img src="https://img.shields.io/badge/──────────%20Data%20Analysis%20%26%20BI%20──────────-0D1117?style=for-the-badge&labelColor=7B2FBE&color=0D1117"/>
 </h3>
 
 <div align="center">
@@ -192,7 +227,7 @@ I've transitioned my **analytical and experimental mindset** into the tech field
 </div>
 
 <h3 align="center">
-  <img src="https://img.shields.io/badge/──────────%20Scientific%20%26%20Research%20Tools%20──────────-0D1117?style=for-the-badge&labelColor=7B2FBE&color=0D1117"/>
+  <img src="https://img.shields.io/badge/──────────%20Scientific%20%26%20Research%20Tools%20──────────-0D1117?style=for-the-badge&labelColor=0981F7&color=0D1117"/>
 </h3>
 
 <div align="center">
@@ -205,7 +240,7 @@ I've transitioned my **analytical and experimental mindset** into the tech field
 </div>
 
 <h3 align="center">
-  <img src="https://img.shields.io/badge/──────────%20Design%20%26%20Creative%20──────────-0D1117?style=for-the-badge&labelColor=0981F7&color=0D1117"/>
+  <img src="https://img.shields.io/badge/──────────%20Design%20%26%20Creative%20──────────-0D1117?style=for-the-badge&labelColor=7B2FBE&color=0D1117"/>
 </h3>
 
 <div align="center">
@@ -283,17 +318,59 @@ I've transitioned my **analytical and experimental mindset** into the tech field
 <tr>
 <td>
 
-<h3>🧠 Brain Tumor Detection & Segmentation</h3>
+<h3>🫀 ECG Heartbeat Categorization — Spark pipeline, 1-D CNN & transfer learning</h3>
 
-End-to-end **MLOps pipeline** for automated glioma detection and segmentation in MRI scans, covering the full machine learning lifecycle from data preprocessing to cloud deployment.
+**123,998 segmented heartbeats** from the MIT-BIH Arrhythmia and PTB Diagnostic databases, taken from raw CSV to a **Spark-native pipeline** (556 MB → **48 MB Parquet**, 11.5× compression), then to four class-weighted Spark ML baselines and a residual 1-D convolutional network in PyTorch.
 
 **Architecture & highlights:**
-- **Stage 1 — Classification:** ResNet-50 CNN trained to detect the presence of brain tumors in MRI images with high sensitivity, minimizing false negatives in a medical-critical context.
-- **Stage 2 — Segmentation:** ResUNet architecture that precisely delineates tumor boundaries at the pixel level, generating segmentation masks for clinical interpretation.
-- **Serving layer:** Flask REST API exposing both model stages as endpoints, integrated with a Streamlit front-end for human-in-the-loop review.
-- **MLOps & deployment:** Fully containerized with Docker and deployed on **AWS App Runner** for auto-scaling, with reproducible training pipelines and model versioning.
+- **The metric is the project.** The data is 113:1 imbalanced, so a model that always predicts "normal" scores 82.8% accuracy — and **macro-F1 0.181**. Every model is therefore ranked on macro-F1, never on accuracy.
+- **Results:** the residual CNN reaches **macro-F1 0.9166** against 0.8323 for the best Spark ML baseline — 8.4 points, with *less* feature engineering, and the gain concentrated in the rare ventricular and fusion classes a cardiologist needs flagged.
+- **Distributed data layer:** per-beat descriptors written as native Spark `Column` expressions (no Python UDFs, nothing crosses the JVM boundary) inside a real `pyspark.ml.Pipeline` with two custom transformers, so the fitted pipeline is savable and versionable.
+- **A controlled transfer experiment:** three arms — from scratch, frozen backbone, fine-tuned — across **three seeds each**, after two "identical" runs landed a point apart. At full PTB size fine-tuning changes nothing; at **510 training beats it is worth 14 points of macro-F1**. The paper's claim and the full-size result are the same curve read at two points on the x-axis.
+- **Engineering:** **109 passing tests** against a real Spark session, MLflow tracking, layered YAML config, `TorchDistributor` behind a flag, Databricks-ready. Everything runs on **2 CPU cores with no GPU** — the CNN trains in 24 minutes.
 
-**What makes it stand out:** The dual-stage design mirrors real clinical workflows — detection first, then localization — making the system both interpretable and actionable for medical professionals.
+**What makes it stand out:** the repository argues with itself — it justifies Spark at this scale *and states the counterargument*, refuses to rank on accuracy and shows why, and walks back a single-seed result it could not reproduce. Splits are intra-patient and the README says so.
+
+<br>
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![PySpark](https://img.shields.io/badge/PySpark-E25A1C?style=flat-square&logo=apache-spark&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
+![MLflow](https://img.shields.io/badge/MLflow-0194E2?style=flat-square&logo=mlflow&logoColor=white)
+![Parquet](https://img.shields.io/badge/Parquet-50ABF1?style=flat-square&logo=apache&logoColor=white)
+![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=flat-square&logo=databricks&logoColor=white)
+![pytest](https://img.shields.io/badge/109%20tests-0A9EDC?style=flat-square&logo=pytest&logoColor=white)
+
+<br>
+
+[![Code](https://img.shields.io/badge/📁%20View%20Code-0D1117?style=for-the-badge)](https://github.com/LunaPerezT/ECG-Heartbeat-Categorization)
+
+</td>
+</tr>
+</table>
+
+</td></tr>
+
+<tr><td height="12"></td></tr>
+
+<tr><td>
+
+<table width="100%" border="2" cellspacing="0" cellpadding="24" style="border-collapse:collapse; border-color:#7B2FBE;">
+<tr>
+<td>
+
+<h3>🧠 Brain Tumor Detection & Segmentation</h3>
+
+An end-to-end pipeline for **low-grade glioma in MRI**, built to mirror the clinical workflow: detect first, then localise. Deployed rather than demonstrated. *(Team of 6.)*
+
+**Architecture & highlights:**
+- **Stage 1 — Classification:** a ResNet-50 filters slices, reaching **macro-F1 0.98** on 576 held-out images, so segmentation compute is never spent on the ~65% of slices with no tumour.
+- **Stage 2 — Segmentation:** a ResUNet delineates the tumour boundary at pixel level — **Dice 0.846 / IoU 0.734**. Pixel accuracy is 0.9925 and means very little: the tumour is a small fraction of each slice, which is exactly why Dice is the reported metric.
+- **Serving layer:** a Flask REST API loads both models from **S3**, runs containerised on **AWS App Runner** behind a `/health` endpoint with CORS pinned to the front end; predictions and masks are written back to S3.
+- **Human in the loop:** a Streamlit interface puts the mask overlay in front of a person who makes the call — the system supports a decision, it does not make one.
+- **Data:** TCGA-LGG via The Cancer Imaging Archive — ~110 patients, 3,899 slices (1,366 with a tumour mask).
+
+**What makes it stand out:** the two-stage design is the decision worth explaining — segmenting every slice wastes compute on healthy tissue and gives the model more chances to hallucinate a mask. Detection-then-localisation is also how a radiologist reads a study.
 
 <br>
 
@@ -304,11 +381,72 @@ End-to-end **MLOps pipeline** for automated glioma detection and segmentation in
 ![Flask](https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white)
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![AWS](https://img.shields.io/badge/AWS%20App%20Runner-232F3E?style=flat-square&logo=amazon-aws&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS%20App%20Runner%20%2B%20S3-232F3E?style=flat-square&logo=amazon-aws&logoColor=white)
 
 <br>
 
 [![Code](https://img.shields.io/badge/📁%20View%20Code-0D1117?style=for-the-badge)](https://github.com/LunaPerezT/brain-tumor-detection/tree/release)
+&nbsp;
+[![Demo](https://img.shields.io/badge/🚀%20Live%20Demo-FF4B4B?style=for-the-badge)](https://braintumor-mri.streamlit.app/)
+
+</td>
+</tr>
+</table>
+
+</td></tr>
+
+<tr><td height="12"></td></tr>
+
+<tr><td>
+
+<table width="100%" border="2" cellspacing="0" cellpadding="24" style="border-collapse:collapse; border-color:#0981F7;">
+<tr>
+<td>
+
+<h3>🚕 Cabify DS Challenge — Experiment Design & Route Divergence</h3>
+
+Two independent problems in one challenge: a **causal-inference question** that existing data cannot answer, and a **model-to-decision pipeline** where the decision rule mattered more than the model.
+
+<br>
+
+**📐 Part 1 — Should a delivery platform keep funding free professional photography?**
+
+The brief asks for keep-or-kill. The analysis argues the question **cannot be answered from existing evidence**, and that sample size is not the reason: restaurants *request* the photographer, and they request it precisely when demand is already rising. In simulation that turns a true **+8% effect into a reported +60.6%**; difference-in-differences only claws it back to +13.9%.
+
+The deeper problem is a parameter nobody has measured. On a marketplace, part of a treated restaurant's gain is demand **taken from an untreated rival on the same platform** — a restaurant-level A/B test reports +11.9% where the cluster as a whole gains +3.7%. The service breaks even only if incrementality exceeds **~37%**.
+
+The design that follows randomises **five tracks** — restaurant-level encouragement, saturation randomisation over co-consideration clusters, a geo switch-off, a customer-side listing test, and cost-effectiveness arms — each buying a piece the others cannot. And it reframes the decision: simulated returns run from **+€980 to −€920 per shoot**, so the answer is not keep-or-kill but *which 44%*.
+
+> *Every figure in Part 1 is simulated, to show what each design choice buys and what its output will look like when real data arrives.*
+
+<br>
+
+**🗺️ Part 2 — Detecting when a driver's real route diverges from the priced one**
+
+The target is a **human judgement, not a geometric fact**, which sets a ceiling: annotators agree with each other 92.7% of the time and with themselves 88.5%. The model agrees with the consensus **94.8%**.
+
+- **34 geometric features** from the two coordinate lists — overlap fractions, sustained detour runs, discrete Fréchet and DTW — feeding a **calibrated logistic regression**: ROC-AUC **0.9902**, Brier **0.0402**. Ten alternative algorithms across two cross-validation schemes beat it on neither discrimination nor calibration, so none were adopted.
+- **The largest improvement came from the decision rule, not the model.** Replacing the F1-optimal threshold with a three-way *accept / review / flag* band derived from the cost of each error took missed divergences **from 78 to zero** while leaving needless flags unchanged — no retraining, one division.
+- **The recommendation:** automate **75.5% of journeys at 97.9% accuracy** and route the ambiguous 24.5% to human review. "Zero missed divergences" is a measurement on 2,212 journeys, not a guarantee.
+- Cost-weighted *training* was rejected first: it more than doubles the Brier score. Costs belong in the decision, not in the model.
+
+<br>
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)
+![Causal Inference](https://img.shields.io/badge/Causal%20Inference-6E40C9?style=flat-square&logoColor=white)
+![A/B Testing](https://img.shields.io/badge/Experiment%20Design-0D7B6A?style=flat-square&logoColor=white)
+![Calibration](https://img.shields.io/badge/Calibration-8B0000?style=flat-square&logoColor=white)
+![Geospatial](https://img.shields.io/badge/Geospatial%20Features%20(Fréchet%20%2F%20DTW)-1A5276?style=flat-square&logoColor=white)
+![SciPy](https://img.shields.io/badge/SciPy-8CAAE6?style=flat-square&logo=scipy&logoColor=white)
+
+<br>
+
+[![Part 1](https://img.shields.io/badge/📐%20Part%201%20—%20Experiment%20Design-0D1117?style=for-the-badge)](https://github.com/LunaPerezT/Cabify-DS-Challenge/tree/main/Part%201%20Experiment%20Design)
+&nbsp;
+[![Part 2](https://img.shields.io/badge/🗺️%20Part%202%20—%20Route%20Divergence-0D1117?style=for-the-badge)](https://github.com/LunaPerezT/Cabify-DS-Challenge/tree/main/Part%202%20Model%20Prototyping)
+&nbsp;
+[![Repo](https://img.shields.io/badge/📁%20Full%20Repo-161B22?style=for-the-badge)](https://github.com/LunaPerezT/Cabify-DS-Challenge)
 
 </td>
 </tr>
@@ -326,23 +464,23 @@ End-to-end **MLOps pipeline** for automated glioma detection and segmentation in
 
 <h3>🤖 Agentic Text-to-SQL — CATBOX</h3>
 
-**CATBOX** (Conversational Agent That Bridges Objects and X-queries) is a conversational AI agent that enables non-technical users to query complex relational databases using plain natural language, powered by the **Model Context Protocol (MCP)**.
+**CATBOX** (Conversational Agent That Bridges Objects and X-queries) lets non-technical users query a live PostgreSQL database in plain language, powered by the **Model Context Protocol (MCP)**. *(Team of 7 — data science, full stack and cybersecurity.)*
 
 **Architecture & highlights:**
-- **LLM orchestration:** Uses **Ollama + Qwen3** as the local LLM backbone, with MCP allowing the agent to dynamically inspect database schemas and table metadata at runtime — enabling accurate SQL generation without hardcoded context.
-- **Security layer:** Every generated query passes through a strict validation layer that blocks all non-`SELECT` operations and sanitizes inputs to prevent SQL injection, making it safe for production environments.
-- **Backend:** Node.js MCP server acts as a bridge between the LLM and PostgreSQL, managing tool calls, schema introspection, and query execution.
-- **Deployment:** Fully containerized with Docker Compose, orchestrating the LLM service, MCP server, and database in a single reproducible environment.
-- **Multidisciplinary integration:** Built collaboratively in a Data Science + Software Engineering team, ensuring DS logic was embedded in a secure, professional-grade architecture.
+- **MCP instead of a schema in the prompt.** The Node.js server exposes the database through an MCP client, so the agent inspects tables and columns **at request time**. The same agent works against a different schema with no prompt edit — and a schema pasted into a prompt goes stale after the next migration.
+- **A validator, not an instruction.** Every generated statement passes a validation layer that rejects anything but a `SELECT` before execution. Telling a model "only write SELECTs" is a request; a validator is a guarantee — and an LLM with a live database connection is a prompt-injection target.
+- **Local LLM:** Qwen3:8b served through Ollama, so schema and customer data never leave the machine.
+- **Answers, not just rows:** the server renders charts to base64 when the question implies one, returned alongside the result set.
+- **Deployment:** Docker Compose orchestrates the LLM service, the MCP server and the database in one reproducible stack.
 
-**What makes it stand out:** The MCP protocol gives the agent real-time database awareness, making it adaptable to any schema without retraining — a true production-ready agentic system.
+**What makes it stand out:** runtime schema awareness makes the agent portable across databases without retraining or re-prompting — and the security layer is enforced in code rather than requested in a prompt.
 
 <br>
 
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![Ollama](https://img.shields.io/badge/Ollama%20(Qwen3)-000000?style=flat-square&logoColor=white)
+![Ollama](https://img.shields.io/badge/Ollama%20(Qwen3%3A8b)-000000?style=flat-square&logoColor=white)
 ![MCP](https://img.shields.io/badge/MCP%20Protocol-6E40C9?style=flat-square&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white)
 ![Flask](https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white)
@@ -357,134 +495,41 @@ End-to-end **MLOps pipeline** for automated glioma detection and segmentation in
 </table>
 
 </td></tr>
-
-<tr><td height="12"></td></tr>
-
-<tr><td>
-
-<table width="100%" border="2" cellspacing="0" cellpadding="24" style="border-collapse:collapse; border-color:#0981F7;">
-<tr>
-<td>
-
-<h3>📊 Mental Health Global Insights</h3>
-
-A comprehensive **Exploratory Data Analysis** project covering 30 years of global mental health data across 200+ countries, built as a fully interactive web application with rich geospatial and temporal visualizations.
-
-**Architecture & highlights:**
-- **Dataset:** WHO and IHME global mental health records spanning 1990–2019, encompassing prevalence rates, DALYs (Disability-Adjusted Life Years), and disorder-specific breakdowns by country, age, and gender.
-- **Geospatial analysis:** Dynamic choropleth world maps built with Plotly, allowing users to explore how mental health burden has evolved geographically over three decades.
-- **DALYs deep-dive:** Custom visualizations to analyze the global burden of disease attributable to mental disorders, segmented by disorder type (depression, anxiety, schizophrenia, bipolar, etc.).
-- **Interactive front-end:** Deployed as a live Streamlit application with filters, selectors, and animated time-series charts for fully self-serve exploration.
-- **Data pipeline:** End-to-end data wrangling with Pandas — handling missing values, multi-index reshaping, and country-code harmonization across multiple WHO datasets.
-
-**What makes it stand out:** Transforms decades of public health data into an accessible, visually compelling narrative — bridging the gap between raw statistics and human insight.
-
-<br>
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)
-![Plotly](https://img.shields.io/badge/Plotly-3F4F75?style=flat-square&logo=plotly&logoColor=white)
-![Seaborn](https://img.shields.io/badge/Seaborn-4C72B0?style=flat-square&logo=python&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)
-![Geospatial](https://img.shields.io/badge/Geospatial%20Analysis-0D7B6A?style=flat-square&logoColor=white)
-
-<br>
-
-[![Code](https://img.shields.io/badge/📁%20View%20Code-0D1117?style=for-the-badge)](https://github.com/LunaPerezT/Mental-Health-EDA-Webpage)
-&nbsp;
-[![Demo](https://img.shields.io/badge/🚀%20Live%20Demo-FF4B4B?style=for-the-badge)](https://mental-health-eda-webpage.streamlit.app/)
-
-</td>
-</tr>
 </table>
 
-</td></tr>
+<br>
 
-<tr><td height="12"></td></tr>
+## 📚 More Projects
 
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
 <tr><td>
 
-<table width="100%" border="2" cellspacing="0" cellpadding="24" style="border-collapse:collapse; border-color:#7B2FBE;">
-<tr>
-<td>
+### 📈 Retail Demand Forecasting — 2,000 series, 31-day horizon
 
-<h3>🩺 Parkinson's Disease Prediction</h3>
+A single **global** gradient-boosting model forecasting daily unit sales for **500 products across 4 stores** one month ahead — 62,000 predictions. About **30% of daily values are zero**, which rules out percentage metrics and makes the choice of evaluation the first real decision: ranking is on **WRMSSE₇**, the M5 competition's metric, which scales each series by its own seasonal-naive error and weights by sales volume.
 
-A **medical ML project** focused on the early detection of Parkinson's Disease using clinical and lifestyle biomarkers, with a strong emphasis on model interpretability and feature transparency — critical for healthcare applications.
+Fourteen models compared on a strictly chronological holdout, with covariates partitioned by when they become knowable — calendar features as *future* covariates, **price as a *past* covariate** because next month's price list is not known at forecast time. The winner, **LightGBM with a Tweedie objective**, tuned by two sequential Optuna studies, reaches **WRMSSE₇ 0.7717** (MASE 0.782) on a held-out December.
 
-**Architecture & highlights:**
-- **Feature engineering:** Analysis of clinical indicators including motor symptoms, vocal measurements (MDVP features), tremor metrics, and lifestyle factors to build a high-signal feature set.
-- **Modeling pipeline:** Evaluated multiple Scikit-learn classifiers (Random Forest, SVM, Gradient Boosting, Logistic Regression) with cross-validation and hyperparameter tuning, optimizing for recall to minimize missed diagnoses.
-- **Interpretability:** SHAP (SHapley Additive exPlanations) values used to rank feature importance and explain individual predictions — making the model transparent to clinicians and non-technical stakeholders.
-- **Deployment:** Interactive Streamlit web app allowing users to input clinical values and receive a real-time prediction with a probability score and feature contribution breakdown.
-- **Healthcare focus:** Designed with sensitivity to medical context — evaluation metrics prioritize false-negative reduction over overall accuracy.
-
-**What makes it stand out:** Bridges the gap between ML performance and clinical usability by making every prediction explainable, not just accurate.
-
-<br>
+Two findings the headline number hides: the linear models score a respectable RMSSE₇ ≈ 0.81 *unweighted* but above 1.14 *weighted* — they do fine on the many small series and badly on the few that carry the revenue. And all six tree ensembles land within **0.021 WRMSSE₇** of each other: the Tweedie objective and the lag set bought the gains, not the choice of library. Stated up front in the repo: the model forecasts a zero on 2.1% of days where the history has 29.4% — it does not reproduce intermittency, and fixing that needs a different model class, not more tuning.
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)
-![SHAP](https://img.shields.io/badge/SHAP-FF6B35?style=flat-square&logoColor=white)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=flat-square&logo=python&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)
+![Darts](https://img.shields.io/badge/Darts-0F4C81?style=flat-square&logo=python&logoColor=white)
+![LightGBM](https://img.shields.io/badge/LightGBM%20(Tweedie)-9ACD32?style=flat-square&logo=python&logoColor=white)
+![Optuna](https://img.shields.io/badge/Optuna-2196F3?style=flat-square&logo=python&logoColor=white)
+![M5](https://img.shields.io/badge/WRMSSE%20%2F%20MASE-2E5E4E?style=flat-square&logoColor=white)
 
-<br>
-
-[![Code](https://img.shields.io/badge/📁%20View%20Code-0D1117?style=for-the-badge)](https://github.com/LunaPerezT/Parkinson-s-Disease-Predictive-ML-Model)
-&nbsp;
-[![Demo](https://img.shields.io/badge/🚀%20Live%20Demo-FF4B4B?style=for-the-badge)](https://parkinsons-disease-ml-predictive-model-webpage.streamlit.app/)
-
-</td>
-</tr>
-</table>
-
-</td></tr>
-
-<tr><td height="12"></td></tr>
-
-<tr><td>
-
-<table width="100%" border="2" cellspacing="0" cellpadding="24" style="border-collapse:collapse; border-color:#0981F7;">
-<tr>
-<td>
-
-<h3>🗄️ Educational Data Architecture — Legacy → PostgreSQL Migration</h3>
-
-A complete **data engineering project** migrating a legacy flat-file institutional system to a normalized, production-grade **PostgreSQL** relational database, designed for long-term scalability and reporting efficiency.
-
-**Architecture & highlights:**
-- **Schema design:** Full 3NF (Third Normal Form) relational data model — eliminating redundancy, enforcing referential integrity with foreign keys, and structuring entities (students, courses, instructors, enrollments) for clean querying.
-- **ETL pipeline:** Custom Python-based ETL process handling extraction from legacy CSV/Excel sources, data validation and transformation, and bulk loading into PostgreSQL with error handling and logging.
-- **Query optimization:** Designed indexes and optimized complex multi-join queries for institutional reporting use cases — including enrollment statistics, course completion rates, and instructor performance metrics.
-- **Data quality:** Deduplication, null handling, and standardization of inconsistent legacy formats (date formats, encoding issues, naming conventions) as part of the transformation layer.
-- **Collaborative project:** Built as a group engineering effort, with version-controlled SQL scripts and documented schema decisions for team maintainability.
-
-**What makes it stand out:** Goes beyond a simple migration — it's a full data architecture redesign that turns a chaotic legacy system into a clean, queryable, and maintainable data foundation.
-
-<br>
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
-![ETL](https://img.shields.io/badge/ETL%20Pipeline-6E40C9?style=flat-square&logoColor=white)
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)
-![Relational Modeling](https://img.shields.io/badge/Relational%20Modeling%203NF-003B57?style=flat-square&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
-
-<br>
-
-[![Code](https://img.shields.io/badge/📁%20View%20Code-0D1117?style=for-the-badge)](https://github.com/LunaPerezT/proyecto_SQL_G3)
-
-</td>
-</tr>
-</table>
+[![Code](https://img.shields.io/badge/📁%20View%20Code-0D1117?style=for-the-badge)](https://github.com/LunaPerezT/Time-Series-Forecasting)
 
 </td></tr>
 </table>
+
+<br>
+
+| Project | What it is | Headline result | Links |
+|---|---|---|---|
+| 🩺 **Parkinson's Disease Prediction** | A systematic search over **2,105 patient records** — demographics, lifestyle, comorbidities, clinical scales (UPDRS, MoCA) and motor/non-motor symptoms. Eleven classifier families, each inside a full pipeline where the scaler and the feature-selection method (`SelectKBest`, `RFECV`) are searched as hyperparameters alongside the model. Imbalance handled with **SMOTENC** applied *inside* the CV fold. Framed as a research prototype, not a diagnostic tool. | Stacking ensemble — **96.9% accuracy, 97.7% recall, 95.7% specificity** on 421 held-out patients | [![Code](https://img.shields.io/badge/Code-0D1117?style=flat-square)](https://github.com/LunaPerezT/Parkinson-s-Disease-Predictive-ML-Model) [![Demo](https://img.shields.io/badge/Demo-FF4B4B?style=flat-square)](https://parkinsons-disease-ml-predictive-model-webpage.streamlit.app/) |
+| 📊 **Mental Health Global Insights** | Three decades of IHME Global Burden of Disease and WHO data — **6,420 records across 214 countries, regions and income groups**, 1990–2019, five disorder families. The spine of the analysis is prevalence (how many people have a disorder) versus **DALYs** (how much healthy life it costs), and the gap between them as a treatment-access signal. Delivered as a ~1,000-line Streamlit app with choropleths, temporal progression and correlation views. | Narrative claims backed by **`scipy.stats` hypothesis tests**, not by eyeballing trend lines | [![Code](https://img.shields.io/badge/Code-0D1117?style=flat-square)](https://github.com/LunaPerezT/Mental-Health-EDA-Webpage) [![Demo](https://img.shields.io/badge/Demo-FF4B4B?style=flat-square)](https://mental-health-eda-webpage.streamlit.app/) |
+| 🗄️ **Educational Data Architecture** | A bootcamp's records lived in five flat CSV exports — four class rosters and a faculty list — repeating campus, cohort and start date on every row, with the two verticals using different column sets, so the two halves of the school could not be queried together at all. Redesigned as a normalised relational model with declared foreign keys, delivered with an ER diagram, a logical model, the DDL and four query files. *(Team of 6.)* | **Seven-table 3NF schema** with enforced referential integrity, plus the reporting queries the flat files made impossible | [![Code](https://img.shields.io/badge/Code-0D1117?style=flat-square)](https://github.com/LunaPerezT/proyecto_SQL_G3) |
 
 <br>
 
