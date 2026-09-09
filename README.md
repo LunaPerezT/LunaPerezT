@@ -430,7 +430,7 @@ Two findings the headline number hides: the linear models score a respectable RM
 ![Optuna](https://img.shields.io/badge/Optuna-2196F3?style=flat-square&logo=python&logoColor=white)
 ![M5](https://img.shields.io/badge/WRMSSE%20%2F%20MASE-2E5E4E?style=flat-square&logoColor=white)
 
-[![Code](https://img.shields.io/badge/📁%20View%20Code-0D1117?style=for-the-badge)](https://github.com/LunaPerezT/Time-Series-Forecasting)
+[![Code](https://img.shields.io/badge/📁%20View%20Code-0D1117?style=for-the-badge)](https://github.com/LunaPerezT/Retail-Demand-Forecasting)
 
 | Project | What it is | Headline result | Links |
 |---|---|---|---|
