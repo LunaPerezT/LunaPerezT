@@ -21,11 +21,7 @@
 
 <br>
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-<tr>
-<td width="58%" valign="top">
-
-<h2>🧬 About Me</h2>
+## 🧬 About Me
 
 I'm a **Data Scientist & AI Engineer** with a background in **science and research**, working across the full pipeline — from ingestion and distributed preprocessing to modelling, evaluation and deployment.
 
@@ -33,28 +29,13 @@ Most of my work sits in **medical and health AI**: ECG arrhythmia classification
 
 I care about **evaluation that survives scrutiny**: baselines that expose what a metric hides, repeated runs before claiming a difference, and decision thresholds derived from cost rather than from a default.
 
-<br>
+- 🔭 &nbsp;**Currently building** Spark-native ML pipelines & global forecasting models
+- 🫀 &nbsp;**Focused on** Medical AI, Deep Learning & decision analysis
+- ⚗️ &nbsp;**Background** in science turned AI superpowers
+- 📍 &nbsp;**Based in** Madrid, Spain
+- 💡 &nbsp;**Philosophy:** connect raw data with real-world impact
 
-<table border="0" cellspacing="0" cellpadding="6">
-<tr>
-  <td>🔭</td><td><b>Currently building</b> Spark-native ML pipelines & global forecasting models</td>
-</tr>
-<tr>
-  <td>🫀</td><td><b>Focused on</b> Medical AI, Deep Learning & decision analysis</td>
-</tr>
-<tr>
-  <td>⚗️</td><td><b>Background</b> in science turned AI superpowers</td>
-</tr>
-<tr>
-  <td>📍</td><td><b>Based in</b> Madrid, Spain</td>
-</tr>
-<tr>
-  <td>💡</td><td><b>Philosophy:</b> connect raw data with real-world impact</td>
-</tr>
-</table>
-
-</td>
-<td width="42%" align="center" valign="middle">
+<div align="center">
 
 <img src="https://i.gifer.com/JXA0.gif" width="290" alt="coding"/>
 
@@ -62,9 +43,7 @@ I care about **evaluation that survives scrutiny**: baselines that expose what a
 
 ![Profile views](https://komarev.com/ghpvc/?username=LunaPerezT&color=0981F7&style=for-the-badge&label=PROFILE+VIEWS)
 
-</td>
-</tr>
-</table>
+</div>
 
 <br>
 
@@ -307,18 +286,19 @@ I care about **evaluation that survives scrutiny**: baselines that expose what a
 </tr>
 </table>
 
+**🎓 Specialisations — Udemy**
+
+- **[Master en Azure Databricks & Spark para Data Engineers \[A-Z\]](https://www.udemy.com/certificate/UC-2463e588-3853-4dde-b4cb-e163c77f5890/)** &nbsp;·&nbsp; 29 h · 186 lessons · Cristian Donayre · Aug 2026
+  <br>Distributed processing with Spark on Azure Databricks — clusters, notebooks, Delta Lake and production pipelines. The platform the [ECG pipeline](https://github.com/LunaPerezT/ECG-Heartbeat-Categorization) was written to run on.
+
+- **[Curso de MCP: Conecta LLMs y Agentes de IA con Apps Externas](https://www.udemy.com/certificate/UC-36fbf563-a3c5-4541-8cb9-952ad3fb24a1/)** &nbsp;·&nbsp; 8 h · 59 lessons · Santiago Hernández · Sep 2026
+  <br>Model Context Protocol end to end — building MCP servers and clients, tool exposure and connecting agents to external systems. The protocol behind [CATBOX](https://github.com/LunaPerezT/CATBOX_SQL_AI_Agent).
+
 <br>
 
 ## 🌟 Featured Projects
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-<tr><td>
-
-<table width="100%" border="2" cellspacing="0" cellpadding="24" style="border-collapse:collapse; border-color:#0981F7;">
-<tr>
-<td>
-
-<h3>🫀 ECG Heartbeat Categorization — Spark pipeline, 1-D CNN & transfer learning</h3>
+### 🫀 ECG Heartbeat Categorization — Spark pipeline, 1-D CNN & transfer learning
 
 **123,998 segmented heartbeats** from the MIT-BIH Arrhythmia and PTB Diagnostic databases, taken from raw CSV to a **Spark-native pipeline** (556 MB → **48 MB Parquet**, 11.5× compression), then to four class-weighted Spark ML baselines and a residual 1-D convolutional network in PyTorch.
 
@@ -331,8 +311,6 @@ I care about **evaluation that survives scrutiny**: baselines that expose what a
 
 **What makes it stand out:** the repository argues with itself — it justifies Spark at this scale *and states the counterargument*, refuses to rank on accuracy and shows why, and walks back a single-seed result it could not reproduce. Splits are intra-patient and the README says so.
 
-<br>
-
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![PySpark](https://img.shields.io/badge/PySpark-E25A1C?style=flat-square&logo=apache-spark&logoColor=white)
 ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white)
@@ -341,25 +319,11 @@ I care about **evaluation that survives scrutiny**: baselines that expose what a
 ![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=flat-square&logo=databricks&logoColor=white)
 ![pytest](https://img.shields.io/badge/109%20tests-0A9EDC?style=flat-square&logo=pytest&logoColor=white)
 
-<br>
-
 [![Code](https://img.shields.io/badge/📁%20View%20Code-0D1117?style=for-the-badge)](https://github.com/LunaPerezT/ECG-Heartbeat-Categorization)
 
-</td>
-</tr>
-</table>
+---
 
-</td></tr>
-
-<tr><td height="12"></td></tr>
-
-<tr><td>
-
-<table width="100%" border="2" cellspacing="0" cellpadding="24" style="border-collapse:collapse; border-color:#7B2FBE;">
-<tr>
-<td>
-
-<h3>🧠 Brain Tumor Detection & Segmentation</h3>
+### 🧠 Brain Tumor Detection & Segmentation
 
 An end-to-end pipeline for **low-grade glioma in MRI**, built to mirror the clinical workflow: detect first, then localise. Deployed rather than demonstrated. *(Team of 6.)*
 
@@ -372,8 +336,6 @@ An end-to-end pipeline for **low-grade glioma in MRI**, built to mirror the clin
 
 **What makes it stand out:** the two-stage design is the decision worth explaining — segmenting every slice wastes compute on healthy tissue and gives the model more chances to hallucinate a mask. Detection-then-localisation is also how a radiologist reads a study.
 
-<br>
-
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=flat-square&logo=tensorflow&logoColor=white)
 ![Keras](https://img.shields.io/badge/Keras-D00000?style=flat-square&logo=keras&logoColor=white)
@@ -383,31 +345,15 @@ An end-to-end pipeline for **low-grade glioma in MRI**, built to mirror the clin
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
 ![AWS](https://img.shields.io/badge/AWS%20App%20Runner%20%2B%20S3-232F3E?style=flat-square&logo=amazon-aws&logoColor=white)
 
-<br>
-
 [![Code](https://img.shields.io/badge/📁%20View%20Code-0D1117?style=for-the-badge)](https://github.com/LunaPerezT/brain-tumor-detection/tree/release)
 &nbsp;
 [![Demo](https://img.shields.io/badge/🚀%20Live%20Demo-FF4B4B?style=for-the-badge)](https://braintumor-mri.streamlit.app/)
 
-</td>
-</tr>
-</table>
+---
 
-</td></tr>
-
-<tr><td height="12"></td></tr>
-
-<tr><td>
-
-<table width="100%" border="2" cellspacing="0" cellpadding="24" style="border-collapse:collapse; border-color:#0981F7;">
-<tr>
-<td>
-
-<h3>🚕 Cabify DS Challenge — Experiment Design & Route Divergence</h3>
+### 🚕 Cabify DS Challenge — Experiment Design & Route Divergence
 
 Two independent problems in one challenge: a **causal-inference question** that existing data cannot answer, and a **model-to-decision pipeline** where the decision rule mattered more than the model.
-
-<br>
 
 **📐 Part 1 — Should a delivery platform keep funding free professional photography?**
 
@@ -419,8 +365,6 @@ The design that follows randomises **five tracks** — restaurant-level encourag
 
 > *Every figure in Part 1 is simulated, to show what each design choice buys and what its output will look like when real data arrives.*
 
-<br>
-
 **🗺️ Part 2 — Detecting when a driver's real route diverges from the priced one**
 
 The target is a **human judgement, not a geometric fact**, which sets a ceiling: annotators agree with each other 92.7% of the time and with themselves 88.5%. The model agrees with the consensus **94.8%**.
@@ -430,8 +374,6 @@ The target is a **human judgement, not a geometric fact**, which sets a ceiling:
 - **The recommendation:** automate **75.5% of journeys at 97.9% accuracy** and route the ambiguous 24.5% to human review. "Zero missed divergences" is a measurement on 2,212 journeys, not a guarantee.
 - Cost-weighted *training* was rejected first: it more than doubles the Brier score. Costs belong in the decision, not in the model.
 
-<br>
-
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931E?style=flat-square&logo=scikit-learn&logoColor=white)
 ![Causal Inference](https://img.shields.io/badge/Causal%20Inference-6E40C9?style=flat-square&logoColor=white)
@@ -440,29 +382,15 @@ The target is a **human judgement, not a geometric fact**, which sets a ceiling:
 ![Geospatial](https://img.shields.io/badge/Geospatial%20Features%20(Fréchet%20%2F%20DTW)-1A5276?style=flat-square&logoColor=white)
 ![SciPy](https://img.shields.io/badge/SciPy-8CAAE6?style=flat-square&logo=scipy&logoColor=white)
 
-<br>
-
 [![Part 1](https://img.shields.io/badge/📐%20Part%201%20—%20Experiment%20Design-0D1117?style=for-the-badge)](https://github.com/LunaPerezT/Cabify-DS-Challenge/tree/main/Part%201%20Experiment%20Design)
 &nbsp;
 [![Part 2](https://img.shields.io/badge/🗺️%20Part%202%20—%20Route%20Divergence-0D1117?style=for-the-badge)](https://github.com/LunaPerezT/Cabify-DS-Challenge/tree/main/Part%202%20Model%20Prototyping)
 &nbsp;
 [![Repo](https://img.shields.io/badge/📁%20Full%20Repo-161B22?style=for-the-badge)](https://github.com/LunaPerezT/Cabify-DS-Challenge)
 
-</td>
-</tr>
-</table>
+---
 
-</td></tr>
-
-<tr><td height="12"></td></tr>
-
-<tr><td>
-
-<table width="100%" border="2" cellspacing="0" cellpadding="24" style="border-collapse:collapse; border-color:#7B2FBE;">
-<tr>
-<td>
-
-<h3>🤖 Agentic Text-to-SQL — CATBOX</h3>
+### 🤖 Agentic Text-to-SQL — CATBOX
 
 **CATBOX** (Conversational Agent That Bridges Objects and X-queries) lets non-technical users query a live PostgreSQL database in plain language, powered by the **Model Context Protocol (MCP)**. *(Team of 7 — data science, full stack and cybersecurity.)*
 
@@ -475,8 +403,6 @@ The target is a **human judgement, not a geometric fact**, which sets a ceiling:
 
 **What makes it stand out:** runtime schema awareness makes the agent portable across databases without retraining or re-prompting — and the security layer is enforced in code rather than requested in a prompt.
 
-<br>
-
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
@@ -486,23 +412,9 @@ The target is a **human judgement, not a geometric fact**, which sets a ceiling:
 ![Flask](https://img.shields.io/badge/Flask-000000?style=flat-square&logo=flask&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker%20Compose-2496ED?style=flat-square&logo=docker&logoColor=white)
 
-<br>
-
 [![Code](https://img.shields.io/badge/📁%20View%20Code-0D1117?style=for-the-badge)](https://github.com/LunaPerezT/CATBOX_SQL_AI_Agent)
 
-</td>
-</tr>
-</table>
-
-</td></tr>
-</table>
-
-<br>
-
 ## 📚 More Projects
-
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-<tr><td>
 
 ### 📈 Retail Demand Forecasting — 2,000 series, 31-day horizon
 
@@ -520,18 +432,11 @@ Two findings the headline number hides: the linear models score a respectable RM
 
 [![Code](https://img.shields.io/badge/📁%20View%20Code-0D1117?style=for-the-badge)](https://github.com/LunaPerezT/Time-Series-Forecasting)
 
-</td></tr>
-</table>
-
-<br>
-
 | Project | What it is | Headline result | Links |
 |---|---|---|---|
 | 🩺 **Parkinson's Disease Prediction** | A systematic search over **2,105 patient records** — demographics, lifestyle, comorbidities, clinical scales (UPDRS, MoCA) and motor/non-motor symptoms. Eleven classifier families, each inside a full pipeline where the scaler and the feature-selection method (`SelectKBest`, `RFECV`) are searched as hyperparameters alongside the model. Imbalance handled with **SMOTENC** applied *inside* the CV fold. Framed as a research prototype, not a diagnostic tool. | Stacking ensemble — **96.9% accuracy, 97.7% recall, 95.7% specificity** on 421 held-out patients | [![Code](https://img.shields.io/badge/Code-0D1117?style=flat-square)](https://github.com/LunaPerezT/Parkinson-s-Disease-Predictive-ML-Model) [![Demo](https://img.shields.io/badge/Demo-FF4B4B?style=flat-square)](https://parkinsons-disease-ml-predictive-model-webpage.streamlit.app/) |
 | 📊 **Mental Health Global Insights** | Three decades of IHME Global Burden of Disease and WHO data — **6,420 records across 214 countries, regions and income groups**, 1990–2019, five disorder families. The spine of the analysis is prevalence (how many people have a disorder) versus **DALYs** (how much healthy life it costs), and the gap between them as a treatment-access signal. Delivered as a ~1,000-line Streamlit app with choropleths, temporal progression and correlation views. | Narrative claims backed by **`scipy.stats` hypothesis tests**, not by eyeballing trend lines | [![Code](https://img.shields.io/badge/Code-0D1117?style=flat-square)](https://github.com/LunaPerezT/Mental-Health-EDA-Webpage) [![Demo](https://img.shields.io/badge/Demo-FF4B4B?style=flat-square)](https://mental-health-eda-webpage.streamlit.app/) |
 | 🗄️ **Educational Data Architecture** | A bootcamp's records lived in five flat CSV exports — four class rosters and a faculty list — repeating campus, cohort and start date on every row, with the two verticals using different column sets, so the two halves of the school could not be queried together at all. Redesigned as a normalised relational model with declared foreign keys, delivered with an ER diagram, a logical model, the DDL and four query files. *(Team of 6.)* | **Seven-table 3NF schema** with enforced referential integrity, plus the reporting queries the flat files made impossible | [![Code](https://img.shields.io/badge/Code-0D1117?style=flat-square)](https://github.com/LunaPerezT/proyecto_SQL_G3) |
-
-<br>
 
 ## 📊 GitHub Stats
 
