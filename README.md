@@ -430,7 +430,7 @@ Two findings the headline number hides: the linear models score a respectable RM
 ![Optuna](https://img.shields.io/badge/Optuna-2196F3?style=flat-square&logo=python&logoColor=white)
 ![M5](https://img.shields.io/badge/WRMSSE%20%2F%20MASE-2E5E4E?style=flat-square&logoColor=white)
 
-[![Code](https://img.shields.io/badge/📁%20View%20Code-0D1117?style=for-the-badge)](https://github.com/LunaPerezT/Retail-Demand-Forecasting)
+[![Code](https://img.shields.io/badge/📁%20View%20Code-0D1117?style=for-the-badge)](https://github.com/LunaPerezT/Time-Series-Forecasting)
 
 | Project | What it is | Headline result | Links |
 |---|---|---|---|
@@ -442,15 +442,21 @@ Two findings the headline number hides: the linear models score a respectable RM
 
 <div align="center">
 
-<img src="https://github-readme-stats.vercel.app/api?username=LunaPerezT&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=0981F7&icon_color=7B2FBE&text_color=c9d1d9&ring_color=7B2FBE" height="170"/>
-&nbsp;
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=LunaPerezT&locale=en&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=0981F7&text_color=c9d1d9" height="170"/>
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=LunaPerezT&theme=tokyonight" width="82%" alt="GitHub profile summary"/>
 
 </div>
 
 <div align="center">
 
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=LunaPerezT&theme=tokyonight&hide_border=true&background=0D1117&stroke=0981F7&ring=7B2FBE&fire=0981F7&currStreakLabel=0981F7&sideLabels=c9d1d9&currStreakNum=ffffff&sideNums=c9d1d9&dates=6e7681" width="65%"/>
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=LunaPerezT&theme=tokyonight" height="200" alt="Top languages by repository"/>
+&nbsp;
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=LunaPerezT&theme=tokyonight" height="200" alt="Top languages by commit"/>
+
+</div>
+
+<div align="center">
+
+<img src="https://streak-stats.demolab.com/?user=LunaPerezT&theme=tokyonight&hide_border=true&background=0D1117&stroke=0981F7&ring=7B2FBE&fire=0981F7&currStreakLabel=0981F7&sideLabels=c9d1d9&currStreakNum=ffffff&sideNums=c9d1d9&dates=6e7681" width="65%" alt="GitHub streak"/>
 
 </div>
 
