@@ -84,7 +84,11 @@ CH = FS * 0.6
 FONT = ("ui-monospace, SFMono-Regular, &apos;SF Mono&apos;, Menlo, Consolas, "
         "&apos;DejaVu Sans Mono&apos;, monospace")
 
-N_POINTS = 19000              # dots in the portrait
+N_POINTS = 18000              # dots in each of the three states
+GROUP = 11                    # dots per translated group (~1.6k groups)
+CYCLE = 14                    # seconds for the full portrait->py->nn->portrait loop
+KEYTIMES = "0;.30;.38;.55;.63;.80;.88;1"
+SPLINES = ";".join([".4 0 .2 1"] * 7)
 ROW_STEP = 0.16               # seconds between rows appearing
 
 
@@ -268,53 +272,178 @@ def stipple(photo: Path | None, box_w: float, box_h: float, seed: int = 7):
     # 0.86 ceiling: above that the densest areas fill in solid and stop reading
     # as a stipple. The 0.08 floor keeps dark hair present as a silhouette.
     a = np.clip(0.08 + 0.78 * v + 0.16 * e, 0, 0.86) * m
-
-    # rejection sampling over the intensity field
-    pts, target, guard = [], N_POINTS, 0
-    while len(pts) < target and guard < 60:
-        guard += 1
-        n = int((target - len(pts)) * 2.2)
-        xs = rng.uniform(0, tw, n)
-        ys = rng.uniform(0, th, n)
-        w = a[np.clip(ys.astype(int), 0, th - 1), np.clip(xs.astype(int), 0, tw - 1)]
-        keep = rng.random(n) < w
-        pts.extend(zip(xs[keep], ys[keep], w[keep]))
-    pts = pts[:target]
-
-    ox, oy = (box_w - tw) / 2, (box_h - th) / 2
-    return [(ox + x, oy + y, 0.62 + 0.55 * v) for x, y, v in pts], (tw, th)
+    return a, (tw, th)
 
 
-def portrait_svg(c, photo, px, py, pw, ph):
+def _shapes(W, H):
+    """Density maps for the two non-photographic states of VISUAL.MAP."""
+    from PIL import Image, ImageDraw
+    from scipy import ndimage
+
+    S = 1000
+
+    def rr(d, box, r):
+        d.rounded_rectangle(box, radius=r, fill=255)
+
+    # --- Python: two interlocking snake hooks ---------------------------
+    up = Image.new("L", (S, S), 0)
+    d = ImageDraw.Draw(up)
+    rr(d, (170, 90, 620, 340), 120)          # head bar
+    rr(d, (170, 250, 420, 640), 30)          # descender
+    rr(d, (170, 430, 830, 640), 30)          # waist bar
+    lo = up.rotate(180)
+    A = np.asarray(up) > 127
+    B = np.asarray(lo) > 127
+    # carve a channel, or the two hooks merge into one blob and stop reading
+    A = A & ~ndimage.binary_dilation(B, np.ones((34, 34)))
+    py = Image.fromarray(((A | B) * 255).astype("uint8"))
+    d = ImageDraw.Draw(py)
+    d.ellipse((268, 178, 340, 250), fill=0)  # eyes
+    d.ellipse((S - 340, S - 250, S - 268, S - 178), fill=0)
+
+    # --- neural net: four layers, fully connected -----------------------
+    nn = Image.new("L", (S, S), 0)
+    d = ImageDraw.Draw(nn)
+    layers = [3, 4, 4, 2]
+    xs = np.linspace(150, 850, len(layers))
+    pos = []
+    for x, n in zip(xs, layers):
+        ys = np.linspace(500 - (n - 1) * 155 / 2, 500 + (n - 1) * 155 / 2, n)
+        pos.append([(x, y) for y in ys])
+    for a_, b_ in zip(pos, pos[1:]):
+        for (x1, y1) in a_:
+            for (x2, y2) in b_:
+                d.line((x1, y1, x2, y2), fill=150, width=16)
+    for layer in pos:
+        for (x, y) in layer:
+            d.ellipse((x - 58, y - 58, x + 58, y + 58), fill=255)
+            d.ellipse((x - 30, y - 30, x + 30, y + 30), fill=30)
+
     out = []
+    for img in (py, nn):
+        k = min(W / S, H / S) * 0.88
+        t = img.resize((int(S * k), int(S * k)), Image.LANCZOS)
+        canvas = np.zeros((H, W))
+        ox, oy = (W - t.width) // 2, (H - t.height) // 2
+        canvas[oy:oy + t.height, ox:ox + t.width] = np.asarray(t) / 255.0
+        out.append(np.clip(canvas, 0, 1) * 0.92)
+    return out
+
+
+def _sample(a, n, rng):
+    """n points drawn with probability proportional to the density map a."""
+    th, tw = a.shape
+    pts, guard = [], 0
+    while len(pts) < n and guard < 80:
+        guard += 1
+        k = int((n - len(pts)) * 2.4) + 32
+        xs = rng.uniform(0, tw, k); ys = rng.uniform(0, th, k)
+        w = a[np.clip(ys.astype(int), 0, th - 1), np.clip(xs.astype(int), 0, tw - 1)]
+        keep = rng.random(k) < w
+        pts.extend(zip(xs[keep], ys[keep], w[keep]))
+    while len(pts) < n:                       # pad rather than fail
+        pts.append(pts[len(pts) % max(1, len(pts))])
+    return pts[:n]
+
+
+def _hilbert_d(x, y, order=8):
+    """Index of (x, y) along a Hilbert curve on a 2**order grid."""
+    n = 1 << order
+    rx = ry = 0
+    d = 0
+    s_ = n >> 1
+    while s_ > 0:
+        rx = 1 if (x & s_) > 0 else 0
+        ry = 1 if (y & s_) > 0 else 0
+        d += s_ * s_ * ((3 * rx) ^ ry)
+        # rotate
+        if ry == 0:
+            if rx == 1:
+                x = s_ - 1 - x
+                y = s_ - 1 - y
+            x, y = y, x
+        s_ >>= 1
+    return d
+
+
+def _compact_order(pts, w, h, order=8):
+    """Sort points along a Hilbert curve.
+
+    Consecutive indices then form COMPACT clusters. A serpentine scan also keeps
+    neighbours together, but its groups come out as long flat strips: translate
+    a strip onto a thin diagonal edge of a neural-net diagram and it smears. A
+    Hilbert group is a small square blob, which lands cleanly in any target.
+    """
+    n = 1 << order
+    keyed = []
+    for p in pts:
+        gx = min(n - 1, max(0, int(p[0] / max(w, 1e-9) * (n - 1))))
+        gy = min(n - 1, max(0, int(p[1] / max(h, 1e-9) * (n - 1))))
+        keyed.append((_hilbert_d(gx, gy, order), p))
+    keyed.sort(key=lambda t: t[0])
+    return [p for _, p in keyed]
+
+
+def visual_map_svg(c, photo, px, py, pw, ph):
+    """The animated point cloud: portrait -> Python -> neural net -> portrait.
+
+    Built the way a large cloud has to be if the file is to stay sane: the dots
+    are chunked into ~1k groups and each group is translated between the three
+    layouts with one <animateTransform>. Animating every dot individually, or
+    morphing path data, multiplies the file by the number of points.
+    """
+    rng = np.random.default_rng(11)
     res = stipple(photo, pw, ph)
     if res is None:
         cx, cy = px + pw / 2, py + ph / 2
-        out.append(
+        return ("\n".join([
             f'<text {_f(13)} x="{cx:.0f}" y="{cy - 6:.0f}" text-anchor="middle" '
-            f'fill="{c["dim"]}">[ awaiting source image ]</text>')
-        out.append(
+            f'fill="{c["dim"]}">[ awaiting source image ]</text>',
             f'<text {_f(11)} x="{cx:.0f}" y="{cy + 16:.0f}" text-anchor="middle" '
-            f'fill="{c["dim"]}">python scripts/generate_banner.py photo.jpg</text>')
-        return "\n".join(out), 0, "NO SIGNAL"
+            f'fill="{c["dim"]}">python scripts/generate_banner.py photo.jpg</text>']),
+            0, "NO SIGNAL")
 
-    dots, (tw, th) = res
-    # Emit the cloud as three <path>s of integer-positioned squares rather than
-    # 13k <circle> elements: at render scale a 1-2px square and a circle are
-    # indistinguishable, and this is ~3x fewer bytes (640 KB -> ~220 KB).
-    buckets = {1: [], 2: [], 3: []}
-    for x, y, r in dots:
-        b = 1 if r < 0.85 else (2 if r < 1.05 else 3)
-        buckets[b].append((round(px + x), round(py + y)))
-    sizes = {1: 1, 2: 2, 3: 3}
-    opac = {1: 0.70, 2: 0.88, 3: 1.0}
-    for b in (1, 2, 3):
-        if not buckets[b]:
-            continue
-        sz = sizes[b]
-        d = "".join(f"M{x} {y}h{sz}v{sz}h-{sz}z" for x, y in buckets[b])
-        out.append(f'<path fill="{c["dot"]}" opacity="{opac[b]}" d="{d}"/>')
-    return "\n".join(out), len(dots), f"{tw}×{th} / 1-BIT"
+    a, (tw, th) = res
+    ox, oy = (pw - tw) / 2, (ph - th) / 2
+
+    home_pts = [(ox + x, oy + y, r) for x, y, r in _sample(a, N_POINTS, rng)]
+    states = [_compact_order(home_pts, pw, ph)]
+    for dens in _shapes(int(pw), int(ph)):
+        states.append(_compact_order(_sample(dens, N_POINTS, rng), pw, ph))
+
+    K = GROUP
+    out = []
+    for g in range(0, N_POINTS, K):
+        home = states[0][g:g + K]
+        if not home:
+            break
+        cx0 = sum(p[0] for p in home) / len(home)
+        cy0 = sum(p[1] for p in home) / len(home)
+        offs = []
+        for st in states[1:]:
+            chunk = st[g:g + K] or home
+            offs.append((sum(p[0] for p in chunk) / len(chunk) - cx0,
+                         sum(p[1] for p in chunk) / len(chunk) - cy0))
+
+        d = []
+        for x, y, w in home:
+            # w is the density at that pixel (0..~0.86). Tone comes from how many
+            # dots land there AND how big they are; bucketing w directly is what
+            # keeps the darks dark and the highlights solid.
+            sz = 1 if w < 0.42 else (2 if w < 0.66 else 3)
+            d.append(f"M{round(px + x)} {round(py + y)}h{sz}v{sz}h-{sz}z")
+        vals = ("0 0;0 0;{0:.0f} {1:.0f};{0:.0f} {1:.0f};{2:.0f} {3:.0f};"
+                "{2:.0f} {3:.0f};0 0;0 0").format(
+                    offs[0][0], offs[0][1], offs[1][0], offs[1][1])
+        out.append(
+            f'<path d="{"".join(d)}">'
+            f'<animateTransform attributeName="transform" type="translate" '
+            f'values="{vals}" keyTimes="{KEYTIMES}" dur="{CYCLE}s" '
+            f'calcMode="spline" keySplines="{SPLINES}" repeatCount="indefinite"/></path>')
+
+    body = "\n".join(out)
+    return (f'<g fill="{c["dot"]}" opacity="0.9">{body}</g>',
+            N_POINTS, "SRC 3-STATE / 1-BIT")
 
 
 # ------------------------------------------------------------------ build ---
@@ -325,7 +454,7 @@ def build(theme: str, photo: Path | None) -> str:
     # ---- left panel ----
     lx, ly, lh = PAD, PANEL_Y, PANEL_H
     inner_pad_top, inner_pad = 34, 18
-    pts_svg, n_pts, src_label = portrait_svg(
+    pts_svg, n_pts, src_label = visual_map_svg(
         c, photo, lx + inner_pad, ly + inner_pad_top,
         LW - 2 * inner_pad, lh - inner_pad_top - 30)
 
@@ -384,7 +513,7 @@ Data Scientist and AI Engineer, Madrid">
 <path d="M{lx+18} {ly+lh-24} h14 M{lx+18} {ly+lh-24} v-14" stroke="{c['accent']}" stroke-width="1.4" fill="none" opacity="0.7"/>
 <path d="M{lx+LW-18} {ly+lh-24} h-14 M{lx+LW-18} {ly+lh-24} v-14" stroke="{c['accent']}" stroke-width="1.4" fill="none" opacity="0.7"/>
 {pts_svg}
-<text {_f(10)} x="{lx + 16}" y="{ly + lh - 10}" fill="{c['dim']}">PTS {n_pts} · FS/STIPPLE</text>
+<text {_f(10)} x="{lx + 16}" y="{ly + lh - 10}" fill="{c['dim']}">PTS {n_pts} · FS/HILBERT</text>
 
 <!-- SYSTEM.INFO -->
 <rect x="{RX}" y="{ly}" width="{RW}" height="{lh}" rx="7" fill="{c['panel']}" stroke="{c['panel_border']}"/>

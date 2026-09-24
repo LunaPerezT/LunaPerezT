@@ -51,7 +51,17 @@ I care about **evaluation that survives scrutiny**: baselines that expose what a
 
 <div align="center">
 
-<img src="https://i.gifer.com/JXA0.gif" width="290" alt="coding"/>
+<!-- GIF and terminal as two inline images, deliberately NOT a two-cell table:
+     GitHub styles every table as width:max-content, so a table here would
+     refuse to wrap and hang a horizontal scrollbar off the section. As inline
+     images they sit side by side on a wide screen and stack on a narrow one. -->
+<img src="https://i.gifer.com/JXA0.gif" width="210" alt="coding" align="middle"/>
+&nbsp;&nbsp;
+<picture>
+  <source media="(prefers-color-scheme: dark)"  srcset="assets/terminal-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/terminal-light.svg">
+  <img src="assets/terminal-dark.svg" width="590" align="middle" alt="profile.sh --live — whoami, focus, portfolio counts and headline metrics"/>
+</picture>
 
 <br><br>
 
