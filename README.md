@@ -4,6 +4,20 @@
 
 <div align="center">
 
+<!-- Animated terminal banner. Self-hosted in this repo: no external service to go
+     down, ~6 KB, no JavaScript. Regenerate with `python scripts/generate_banner.py`
+     after editing the LINES list in that script. If a change does not show up,
+     GitHub is serving a cached copy - add ?v=2 (then v=3, ...) to the paths below. -->
+<picture>
+  <source media="(prefers-color-scheme: dark)"  srcset="assets/banner-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg">
+  <img src="assets/banner-dark.svg" width="94%" alt="profile.sh --live — Luna Pérez Troncoso, Data Scientist & AI Engineer, Madrid">
+</picture>
+
+</div>
+
+<div align="center">
+
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=20&duration=2800&pause=900&color=0981F7&background=00000000&center=true&vCenter=true&multiline=false&repeat=true&width=750&lines=🔬+Science+background+→+AI+engineering;🫀+Medical+AI+%7C+Deep+Learning+%7C+Spark+pipelines;📊+From+raw+data+to+decisions+someone+can+act+on;⚖️+Metrics+that+survive+scrutiny)](https://git.io/typing-svg)
 
 </div>

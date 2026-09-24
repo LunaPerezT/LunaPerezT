@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 386" width="980" height="386" role="img" aria-label="Terminal banner: Luna Perez Troncoso, Data Scientist and AI Engineer, Madrid">
+<title>profile.sh --live — Luna Pérez Troncoso</title>
+<defs>
+<clipPath id="t0"><rect x="30" y="55" height="29" width="0"><animate attributeName="width" from="0" to="96" begin="0.30s" dur="0.28s" calcMode="linear" fill="freeze"/></rect></clipPath>
+<clipPath id="t1"><rect x="50" y="85" height="29" width="0"><animate attributeName="width" from="0" to="616" begin="0.68s" dur="0.35s" calcMode="linear" fill="freeze"/></rect></clipPath>
+<clipPath id="t2"><rect x="30" y="125" height="29" width="0"><animate attributeName="width" from="0" to="167" begin="1.13s" dur="0.53s" calcMode="linear" fill="freeze"/></rect></clipPath>
+<clipPath id="t3"><rect x="50" y="155" height="29" width="0"><animate attributeName="width" from="0" to="718" begin="1.76s" dur="0.41s" calcMode="linear" fill="freeze"/></rect></clipPath>
+<clipPath id="t4"><rect x="30" y="195" height="29" width="0"><animate attributeName="width" from="0" to="259" begin="2.27s" dur="0.84s" calcMode="linear" fill="freeze"/></rect></clipPath>
+<clipPath id="t5"><rect x="50" y="225" height="29" width="0"><animate attributeName="width" from="0" to="463" begin="3.21s" dur="0.26s" calcMode="linear" fill="freeze"/></rect></clipPath>
+<clipPath id="t6"><rect x="30" y="265" height="29" width="0"><animate attributeName="width" from="0" to="310" begin="3.58s" dur="1.02s" calcMode="linear" fill="freeze"/></rect></clipPath>
+<clipPath id="t7"><rect x="50" y="295" height="29" width="0"><animate attributeName="width" from="0" to="595" begin="4.69s" dur="0.34s" calcMode="linear" fill="freeze"/></rect></clipPath>
+<linearGradient id="edge" x1="0" y1="0" x2="1" y2="0">
+  <stop offset="0" stop-color="#0981F7"/><stop offset="1" stop-color="#7B2FBE"/>
+</linearGradient>
+</defs>
+<rect x="1" y="1" width="978" height="384" rx="12" fill="#FFFFFF" stroke="#D1D9E0"/>
+<path d="M1 13 A12 12 0 0 1 13 1 H967 A12 12 0 0 1 979 13 V42 H1 Z" fill="#F6F8FA"/>
+<line x1="1" y1="42" x2="979" y2="42" stroke="#D1D9E0"/>
+<rect x="1" y="381" width="978" height="4" fill="url(#edge)" opacity="0.9"/>
+
+<circle cx="24" cy="21" r="6" fill="#FF5F57"/>
+<circle cx="45" cy="21" r="6" fill="#FEBC2E"/>
+<circle cx="66" cy="21" r="6" fill="#28C840"/>
+<text font-family="ui-monospace, SFMono-Regular, &apos;SF Mono&apos;, Menlo, Consolas, &apos;DejaVu Sans Mono&apos;, monospace" font-size="13px" x="490" y="26" text-anchor="middle" fill="#59636E">profile.sh --live</text>
+
+<text font-family="ui-monospace, SFMono-Regular, &apos;SF Mono&apos;, Menlo, Consolas, &apos;DejaVu Sans Mono&apos;, monospace" font-size="17px" x="34" y="76" clip-path="url(#t0)"><tspan fill="#1A7F37">$</tspan><tspan fill="#59636E"> </tspan><tspan fill="#1F2328">whoami</tspan></text>
+<text font-family="ui-monospace, SFMono-Regular, &apos;SF Mono&apos;, Menlo, Consolas, &apos;DejaVu Sans Mono&apos;, monospace" font-size="17px" x="54" y="106" clip-path="url(#t1)"><tspan fill="#0550AE" font-weight="600">Luna Pérez Troncoso</tspan><tspan fill="#59636E"> · </tspan><tspan fill="#1F2328">Data Scientist &amp; AI Engineer</tspan><tspan fill="#59636E"> · Madrid</tspan></text>
+<text font-family="ui-monospace, SFMono-Regular, &apos;SF Mono&apos;, Menlo, Consolas, &apos;DejaVu Sans Mono&apos;, monospace" font-size="17px" x="34" y="146" clip-path="url(#t2)"><tspan fill="#1A7F37">$</tspan><tspan fill="#59636E"> </tspan><tspan fill="#1F2328">cat focus.txt</tspan></text>
+<text font-family="ui-monospace, SFMono-Regular, &apos;SF Mono&apos;, Menlo, Consolas, &apos;DejaVu Sans Mono&apos;, monospace" font-size="17px" x="54" y="176" clip-path="url(#t3)"><tspan fill="#1F2328">Medical &amp; health AI</tspan><tspan fill="#59636E"> — from Spark pipelines </tspan><tspan fill="#59636E">to deployed decision tools</tspan></text>
+<text font-family="ui-monospace, SFMono-Regular, &apos;SF Mono&apos;, Menlo, Consolas, &apos;DejaVu Sans Mono&apos;, monospace" font-size="17px" x="34" y="216" clip-path="url(#t4)"><tspan fill="#1A7F37">$</tspan><tspan fill="#59636E"> </tspan><tspan fill="#1F2328">ls ~/portfolio | wc -l</tspan></text>
+<text font-family="ui-monospace, SFMono-Regular, &apos;SF Mono&apos;, Menlo, Consolas, &apos;DejaVu Sans Mono&apos;, monospace" font-size="17px" x="54" y="246" clip-path="url(#t5)"><tspan fill="#6639BA" font-weight="600">9</tspan><tspan fill="#59636E"> projects · </tspan><tspan fill="#6639BA" font-weight="600">3</tspan><tspan fill="#59636E"> live apps · </tspan><tspan fill="#6639BA" font-weight="600">109</tspan><tspan fill="#59636E"> passing tests</tspan></text>
+<text font-family="ui-monospace, SFMono-Regular, &apos;SF Mono&apos;, Menlo, Consolas, &apos;DejaVu Sans Mono&apos;, monospace" font-size="17px" x="34" y="286" clip-path="url(#t6)"><tspan fill="#1A7F37">$</tspan><tspan fill="#59636E"> </tspan><tspan fill="#1F2328">python -c "print(headline)"</tspan></text>
+<text font-family="ui-monospace, SFMono-Regular, &apos;SF Mono&apos;, Menlo, Consolas, &apos;DejaVu Sans Mono&apos;, monospace" font-size="17px" x="54" y="316" clip-path="url(#t7)"><tspan fill="#59636E">ECG macro-F1 </tspan><tspan fill="#6639BA" font-weight="600">0.9166</tspan><tspan fill="#59636E">  ·  MRI Dice </tspan><tspan fill="#6639BA" font-weight="600">0.846</tspan><tspan fill="#59636E">  ·  WRMSSE₇ </tspan><tspan fill="#6639BA" font-weight="600">0.7717</tspan></text>
+<text font-family="ui-monospace, SFMono-Regular, &apos;SF Mono&apos;, Menlo, Consolas, &apos;DejaVu Sans Mono&apos;, monospace" font-size="17px" x="34" y="356"><tspan fill="#1A7F37">$</tspan></text>
+<rect x="54" y="341" width="10" height="17" fill="#0550AE" opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.01;0.02;0.5;0.51" dur="1.06s" begin="5.13s" repeatCount="indefinite"/></rect>
+</svg>
