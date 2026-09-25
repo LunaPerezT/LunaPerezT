@@ -84,11 +84,15 @@ CH = FS * 0.6
 FONT = ("ui-monospace, SFMono-Regular, &apos;SF Mono&apos;, Menlo, Consolas, "
         "&apos;DejaVu Sans Mono&apos;, monospace")
 
-N_POINTS = 18000              # dots in each of the three states
-GROUP = 11                    # dots per translated group (~1.6k groups)
+N_POINTS = 9000               # dots in each of the three states
+DOT = 2                       # side of every dot, in viewBox units
+CHUNK = 250                   # dots per <path>; only affects file shape, not accuracy
+# Blob size scales as sqrt(shape_area * GROUP / N_POINTS): drop the point count
+# without dropping GROUP with it and every target shape smears. These two move
+# together.
 CYCLE = 14                    # seconds for the full portrait->py->nn->portrait loop
-KEYTIMES = "0;.30;.38;.55;.63;.80;.88;1"
-SPLINES = ";".join([".4 0 .2 1"] * 7)
+KEYTIMES = "0;.30;.40;.58;.68;.86;1"
+SPLINES = ";".join([".4 0 .2 1"] * 6)
 ROW_STEP = 0.16               # seconds between rows appearing
 
 
@@ -271,57 +275,66 @@ def stipple(photo: Path | None, box_w: float, box_h: float, seed: int = 7):
 
     # 0.86 ceiling: above that the densest areas fill in solid and stop reading
     # as a stipple. The 0.08 floor keeps dark hair present as a silhouette.
-    a = np.clip(0.08 + 0.78 * v + 0.16 * e, 0, 0.86) * m
+    a = np.clip(0.05 + 0.90 * v + 0.14 * e, 0, 0.95) * m
     return a, (tw, th)
+
+
+# The official Python mark, rasterised once from the simple-icons path and
+# packed here as a 320x320 1-bit mask (zlib + base64, ~1.2 KB). Embedding the
+# bitmap rather than re-drawing the shape by hand keeps the logo correct, and
+# rather than rasterising an SVG at build time keeps the script dependency-free.
+PYTHON_MASK_B64 = (
+    "eNrt202SsyAQBmCtLFx6BI/i0fRoHoXdbFm6oOjJT01AtF9elRmrvi+un0qkabCDnapKrlpEbJW9BnlcPsd6eV0Os0Z+LgPdm+FvboODHzhEDtzhTeJrpL4WBbFfOEeM9nlxtycyZYOMb7BL3EwNQx/IINxAUqZEul65iQqLlgprZ6nwaYFpV86RzpNOqGlDriIC3T0G2OcD3T8C1lJuSoJoVHej3Jgkg1VcmlyK8zvckE0E3rlfcP0R5867oaDzF7lVvjgy/866NO81Z5J1pLk52RQ055I9WnPyJZyTj/u4/8xtFDIf91cOFuaJm1HJFDnRK86lm/RKbeGsVhAnzmW+9sd5rTBNnODRBjfh23s7s12vr5zFw3i7ebsOXzkHoxycx8N9O1HW96YbCDfCsAQ3kc7A8C3cjXEWZcsBN8PpWLiOcY50Hk7bfidweg85odzIuppzE+tQutyna68zzTXOsq69xs0one/LrLCr9zqHloeYi1zIOtZ56MbghhIubI5FnCedC5stdDPclPc7Czfl+JiGcxPclONjKc7hTTmuJsmwVORwa3IYN4Z5/MyNb6/hokxNr8el0uJMr9eHiE9yt1mtjzBzQrt9zNiq+ZE9Kd38taEuh2O3152LipDM4Zp7EeWBWv1c/houjx5u4PKXXV4NuUt0pOvJ5UruOtwwHBfl+7Q1pCu7uWMXnkcWhi84A8N3xAnlcIV8wMFpC/UL60bWNYUdrmi7va4q7XBF217jTGnXlHUh68q4kJ14lwy/V7GrWFdRzhd2LmzyRdwcHi5FnA0PNehMKI6KuCnUoNCNpIuqqJyrCeej6g2f73Fujs7/kLPReSJyJioHkRujqha5+BgYOB+Xq8DNcfkLnImPs4Gb4hcpuvOLMl5386Lu1t20qONVl7wOiJz2PqEmXfr+6OP+xum/6D7u4/5x98U5/+r7yLpnCwnh7OP5Q7hniwvlasqNpHs+BvLu1SJ0jesJ5/7OdUec/wU3nHNtmgesE8bp+deQeZ+2RGrulqy3lnLu1ceZ76OtRGtozR/Qas5y/cCK60nXaYVp9nh4Iht92QZjtmGZbID2JxuvO2ra1oExJxvN2cZ1uhGebayvudtbfrGn/peQ+VPEIFyV2nAfF+4w+w+LgWMvuJ7Zb9XbW7g="
+)
+PYTHON_MASK_SIZE = 320
+
+
+def _python_mask():
+    import base64
+    import zlib
+
+    raw = zlib.decompress(base64.b64decode(PYTHON_MASK_B64))
+    bits = np.unpackbits(np.frombuffer(raw, dtype=np.uint8))
+    n = PYTHON_MASK_SIZE
+    return bits[: n * n].reshape(n, n).astype(np.float64)
 
 
 def _shapes(W, H):
     """Density maps for the two non-photographic states of VISUAL.MAP."""
     from PIL import Image, ImageDraw
-    from scipy import ndimage
 
     S = 1000
 
-    def rr(d, box, r):
-        d.rounded_rectangle(box, radius=r, fill=255)
+    # --- Python: the real mark -------------------------------------------
+    py = Image.fromarray((_python_mask() * 255).astype("uint8")).resize(
+        (S, S), Image.LANCZOS)
 
-    # --- Python: two interlocking snake hooks ---------------------------
-    up = Image.new("L", (S, S), 0)
-    d = ImageDraw.Draw(up)
-    rr(d, (170, 90, 620, 340), 120)          # head bar
-    rr(d, (170, 250, 420, 640), 30)          # descender
-    rr(d, (170, 430, 830, 640), 30)          # waist bar
-    lo = up.rotate(180)
-    A = np.asarray(up) > 127
-    B = np.asarray(lo) > 127
-    # carve a channel, or the two hooks merge into one blob and stop reading
-    A = A & ~ndimage.binary_dilation(B, np.ones((34, 34)))
-    py = Image.fromarray(((A | B) * 255).astype("uint8"))
-    d = ImageDraw.Draw(py)
-    d.ellipse((268, 178, 340, 250), fill=0)  # eyes
-    d.ellipse((S - 340, S - 250, S - 268, S - 178), fill=0)
-
-    # --- neural net: four layers, fully connected -----------------------
+    # --- neural net ------------------------------------------------------
+    # Solid nodes, not rings: at the resolution a translated group of dots can
+    # carry, a ring's hole collapses and the whole thing reads as noise. Few
+    # layers, generous spacing, and edges thick enough to survive the same
+    # limit.
     nn = Image.new("L", (S, S), 0)
     d = ImageDraw.Draw(nn)
-    layers = [3, 4, 4, 2]
-    xs = np.linspace(150, 850, len(layers))
+    layers = [4, 5, 3]
+    xs = np.linspace(155, 845, len(layers))
     pos = []
     for x, n in zip(xs, layers):
-        ys = np.linspace(500 - (n - 1) * 155 / 2, 500 + (n - 1) * 155 / 2, n)
+        ys = np.linspace(500 - (n - 1) * 175 / 2, 500 + (n - 1) * 175 / 2, n)
         pos.append([(x, y) for y in ys])
+    # draw the mesh first and faint, so the solid nodes stay the brightest
+    # thing in the frame and survive the group-translation blur
     for a_, b_ in zip(pos, pos[1:]):
         for (x1, y1) in a_:
             for (x2, y2) in b_:
-                d.line((x1, y1, x2, y2), fill=150, width=16)
+                d.line((x1, y1, x2, y2), fill=58, width=14)
     for layer in pos:
         for (x, y) in layer:
-            d.ellipse((x - 58, y - 58, x + 58, y + 58), fill=255)
-            d.ellipse((x - 30, y - 30, x + 30, y + 30), fill=30)
+            d.ellipse((x - 60, y - 60, x + 60, y + 60), fill=255)
 
     out = []
-    for img in (py, nn):
-        k = min(W / S, H / S) * 0.88
+    for img, fit in ((py, 0.78), (nn, 0.92)):
+        k = min(W / S, H / S) * fit
         t = img.resize((int(S * k), int(S * k)), Image.LANCZOS)
         canvas = np.zeros((H, W))
         ox, oy = (W - t.width) // 2, (H - t.height) // 2
@@ -330,20 +343,61 @@ def _shapes(W, H):
     return out
 
 
-def _sample(a, n, rng):
-    """n points drawn with probability proportional to the density map a."""
-    th, tw = a.shape
-    pts, guard = [], 0
-    while len(pts) < n and guard < 80:
-        guard += 1
-        k = int((n - len(pts)) * 2.4) + 32
-        xs = rng.uniform(0, tw, k); ys = rng.uniform(0, th, k)
-        w = a[np.clip(ys.astype(int), 0, th - 1), np.clip(xs.astype(int), 0, tw - 1)]
-        keep = rng.random(k) < w
-        pts.extend(zip(xs[keep], ys[keep], w[keep]))
-    while len(pts) < n:                       # pad rather than fail
-        pts.append(pts[len(pts) % max(1, len(pts))])
-    return pts[:n]
+def _sample(a, n, rng, cell=1):
+    """n points placed by Floyd-Steinberg error diffusion over the density map.
+
+    Rejection sampling was the obvious choice and the wrong one: independent
+    random draws are Poisson, so they clump and leave holes, and a logo with
+    large solid areas comes out looking eaten. Error diffusion spreads the same
+    number of points evenly - blue noise rather than white - which is what a
+    stipple wants. Returns (x, y, density) per point.
+    """
+    a = np.asarray(a, dtype=np.float64)
+    # Dither on a grid whose cell equals the dot size. A 1px dot renders below
+    # one device pixel once the banner is scaled into a README column and fades
+    # out; a bigger dot on a matching grid keeps ink coverage exactly equal to
+    # the density, so the tone mapping stays linear instead of saturating where
+    # neighbouring dots would overlap.
+    if cell > 1:
+        h0, w0 = a.shape
+        hh, ww = h0 // cell, w0 // cell
+        a = a[: hh * cell, : ww * cell].reshape(hh, cell, ww, cell).mean(axis=(1, 3))
+    total = a.sum()
+    if total <= 0:
+        return []
+    work = a * (n / total)                      # so the dither yields ~n dots
+    work = np.clip(work, 0, 1)
+    # renormalise once after clipping, or bright areas silently lose their share
+    if work.sum() > 0:
+        work *= min(3.0, n / work.sum())
+        work = np.clip(work, 0, 1)
+
+    h, w = work.shape
+    err = work.copy()
+    pts = []
+    for y in range(h):
+        row = err[y]
+        for x in range(w):
+            old = row[x]
+            new_v = 1.0 if old > 0.5 else 0.0
+            if new_v:
+                pts.append((x * cell, y * cell, float(a[y, x])))
+            e = old - new_v
+            if x + 1 < w:
+                row[x + 1] += e * 7 / 16
+            if y + 1 < h:
+                if x > 0:
+                    err[y + 1][x - 1] += e * 3 / 16
+                err[y + 1][x] += e * 5 / 16
+                if x + 1 < w:
+                    err[y + 1][x + 1] += e * 1 / 16
+
+    if len(pts) > n:
+        keep = rng.choice(len(pts), n, replace=False)
+        pts = [pts[i] for i in sorted(keep)]
+    while len(pts) < n and pts:                 # pad so all states match in count
+        pts.append(pts[rng.integers(0, len(pts))])
+    return pts
 
 
 def _hilbert_d(x, y, order=8):
@@ -406,43 +460,49 @@ def visual_map_svg(c, photo, px, py, pw, ph):
     a, (tw, th) = res
     ox, oy = (pw - tw) / 2, (ph - th) / 2
 
-    home_pts = [(ox + x, oy + y, r) for x, y, r in _sample(a, N_POINTS, rng)]
+    home_pts = [(ox + x, oy + y, r) for x, y, r in _sample(a, N_POINTS, rng, DOT)]
     states = [_compact_order(home_pts, pw, ph)]
     for dens in _shapes(int(pw), int(ph)):
-        states.append(_compact_order(_sample(dens, N_POINTS, rng), pw, ph))
+        states.append(_compact_order(_sample(dens, N_POINTS, rng, DOT), pw, ph))
 
-    K = GROUP
+    # Morph the path data itself rather than translating groups of dots.
+    # A rigid <animateTransform> per group carries the portrait's local
+    # arrangement into every target, so each group lands as a blob roughly its
+    # own size off the outline and the logo comes out fuzzy. Animating "d"
+    # moves every dot to its exact position in each state - the structure of
+    # the path (one M/m + h v h z per dot) is identical across states, which is
+    # what SMIL needs to interpolate it.
+    def encode(pts):
+        # Each dot is a DOT-long vertical stroke of width DOT, i.e. a DOT x DOT
+        # square - four times shorter to write than the equivalent filled box
+        # ("m5 -3v2" against "m5 -3h2v2h-2z"), and that matters when the same
+        # geometry is repeated once per keyframe. Deltas are relative and the
+        # Hilbert order keeps them to one or two digits.
+        out_, px_, py_ = [], 0, 0
+        for i, (x, y, _) in enumerate(pts):
+            X, Y = round(px + x), round(py + y)
+            if i == 0:
+                out_.append(f"M{X} {Y}v{DOT}")
+            else:
+                out_.append(f"m{X - px_} {Y - py_}v{DOT}")
+            px_, py_ = X, Y + DOT      # v leaves the pen DOT below Y
+        return "".join(out_)
+
     out = []
-    for g in range(0, N_POINTS, K):
-        home = states[0][g:g + K]
-        if not home:
+    for g in range(0, N_POINTS, CHUNK):
+        ds = [encode(st[g:g + CHUNK]) for st in states]
+        if not ds[0]:
             break
-        cx0 = sum(p[0] for p in home) / len(home)
-        cy0 = sum(p[1] for p in home) / len(home)
-        offs = []
-        for st in states[1:]:
-            chunk = st[g:g + K] or home
-            offs.append((sum(p[0] for p in chunk) / len(chunk) - cx0,
-                         sum(p[1] for p in chunk) / len(chunk) - cy0))
-
-        d = []
-        for x, y, w in home:
-            # w is the density at that pixel (0..~0.86). Tone comes from how many
-            # dots land there AND how big they are; bucketing w directly is what
-            # keeps the darks dark and the highlights solid.
-            sz = 1 if w < 0.42 else (2 if w < 0.66 else 3)
-            d.append(f"M{round(px + x)} {round(py + y)}h{sz}v{sz}h-{sz}z")
-        vals = ("0 0;0 0;{0:.0f} {1:.0f};{0:.0f} {1:.0f};{2:.0f} {3:.0f};"
-                "{2:.0f} {3:.0f};0 0;0 0").format(
-                    offs[0][0], offs[0][1], offs[1][0], offs[1][1])
+        vals = ";".join([ds[0], ds[0], ds[1], ds[1], ds[2], ds[2], ds[0]])
         out.append(
-            f'<path d="{"".join(d)}">'
-            f'<animateTransform attributeName="transform" type="translate" '
-            f'values="{vals}" keyTimes="{KEYTIMES}" dur="{CYCLE}s" '
-            f'calcMode="spline" keySplines="{SPLINES}" repeatCount="indefinite"/></path>')
+            f'<path d="{ds[0]}">'
+            f'<animate attributeName="d" values="{vals}" keyTimes="{KEYTIMES}" '
+            f'dur="{CYCLE}s" calcMode="spline" keySplines="{SPLINES}" '
+            f'repeatCount="indefinite"/></path>')
 
     body = "\n".join(out)
-    return (f'<g fill="{c["dot"]}" opacity="0.9">{body}</g>',
+    return (f'<g fill="none" stroke="{c["dot"]}" stroke-width="{DOT}" '
+            f'stroke-linecap="butt" opacity="0.9" shape-rendering="crispEdges">{body}</g>',
             N_POINTS, "SRC 3-STATE / 1-BIT")
 
 
@@ -513,7 +573,7 @@ Data Scientist and AI Engineer, Madrid">
 <path d="M{lx+18} {ly+lh-24} h14 M{lx+18} {ly+lh-24} v-14" stroke="{c['accent']}" stroke-width="1.4" fill="none" opacity="0.7"/>
 <path d="M{lx+LW-18} {ly+lh-24} h-14 M{lx+LW-18} {ly+lh-24} v-14" stroke="{c['accent']}" stroke-width="1.4" fill="none" opacity="0.7"/>
 {pts_svg}
-<text {_f(10)} x="{lx + 16}" y="{ly + lh - 10}" fill="{c['dim']}">PTS {n_pts} · FS/HILBERT</text>
+<text {_f(10)} x="{lx + 16}" y="{ly + lh - 10}" fill="{c['dim']}">PTS {n_pts} · FS/HILBERT-MORPH</text>
 
 <!-- SYSTEM.INFO -->
 <rect x="{RX}" y="{ly}" width="{RW}" height="{lh}" rx="7" fill="{c['panel']}" stroke="{c['panel_border']}"/>
