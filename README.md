@@ -11,14 +11,16 @@
 <div align="center">
 
 <!-- Animated terminal banner. Self-hosted in this repo: no external service to go
-     down, ~6 KB, no JavaScript. Regenerate with `python scripts/generate_banner.py`
+     down, no JavaScript. Regenerate with `python scripts/generate_banner.py`
      after editing the LINES list in that script. If a change does not show up,
-     GitHub is serving a cached copy - add ?v=2 (then v=3, ...) to the paths below. -->
-<picture>
-  <source media="(prefers-color-scheme: dark)"  srcset="assets/banner-dark.svg?v=4">
-  <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg?v=4">
-  <img src="assets/banner-dark.svg?v=4" width="94%" alt="profile.sh --live — stipple portrait and system info for Luna Pérez Troncoso, Data Scientist & AI Engineer, Madrid">
-</picture>
+     GitHub is serving a cached copy - add ?v=2 (then v=3, ...) to the path below.
+
+     Deliberately NOT a <picture> pair: the dark file is served to everyone. The
+     portrait is drawn in dots whose density carries the light, so on a white
+     ground it reads as a negative of a face rather than a face. The panel has
+     its own opaque background, so it sits on a light page as a screenshot of a
+     terminal would. -->
+<img src="assets/banner-dark.svg?v=5" width="94%" alt="profile.sh --live — stipple portrait and system info for Luna Pérez Troncoso, Data Scientist & AI Engineer, Madrid">
 
 </div>
 
@@ -57,11 +59,10 @@ I care about **evaluation that survives scrutiny**: baselines that expose what a
      images they sit side by side on a wide screen and stack on a narrow one. -->
 <img src="https://i.gifer.com/JXA0.gif" width="210" alt="coding" align="middle"/>
 &nbsp;&nbsp;
-<picture>
-  <source media="(prefers-color-scheme: dark)"  srcset="assets/terminal-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/terminal-light.svg">
-  <img src="assets/terminal-dark.svg" width="590" align="middle" alt="profile.sh --live — whoami, focus, portfolio counts and headline metrics"/>
-</picture>
+<!-- Dark in both themes, to match the banner at the top of the page: the two are
+     the same terminal, so one going white while the other stayed black read as a
+     bug. Swap this back for a <picture> pair if the light panel is ever wanted. -->
+<img src="assets/terminal-dark.svg?v=2" width="590" align="middle" alt="profile.sh --live — whoami, focus, portfolio counts and headline metrics"/>
 
 <br><br>
 
