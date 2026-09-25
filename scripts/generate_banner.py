@@ -84,15 +84,27 @@ CH = FS * 0.6
 FONT = ("ui-monospace, SFMono-Regular, &apos;SF Mono&apos;, Menlo, Consolas, "
         "&apos;DejaVu Sans Mono&apos;, monospace")
 
-N_POINTS = 9000               # dots in each of the three states
+N_POINTS = 4000               # dots in each of the three states
 DOT = 2                       # side of every dot, in viewBox units
-CHUNK = 250                   # dots per <path>; only affects file shape, not accuracy
+# Dots per <path>. Every dot in a path necessarily shares one clock, so this is
+# the size of the smallest thing that can move on its own: at 250 a visible
+# patch of the portrait slid across the panel in formation. At 20 the unit is
+# ~4 dots across - about 6 screen pixels in the README - so what the eye
+# follows is single points, not tiles.
+CHUNK = 20
 # Blob size scales as sqrt(shape_area * GROUP / N_POINTS): drop the point count
 # without dropping GROUP with it and every target shape smears. These two move
 # together.
-CYCLE = 14                    # seconds for the full portrait->py->nn->portrait loop
-KEYTIMES = "0;.30;.40;.58;.68;.86;1"
-SPLINES = ";".join([".4 0 .2 1"] * 6)
+CYCLE = 18                    # seconds for the full portrait->py->nn->portrait loop
+# hold 0.133 (2.4s) / travel 0.200 (3.6s), three of each. Long travel is what
+# makes the drift read as slow rather than as a cut.
+BASE_KT = [0.0, 0.1333, 0.3333, 0.4667, 0.6667, 0.8000, 1.0]
+KT_JITTER = 0.030             # +/- 0.54s of departure and arrival scatter per path
+ORDER_SIGMA = 90              # how far a dot's target wanders from its neighbours'
+# Near-linear eases with soft ends. The old ".4 0 .2 1" fired every dot out of
+# the gate together; these, varied per path, keep the middle of the flight calm.
+SPLINE_SET = ("0.45 0.05 0.55 0.95", "0.35 0 0.65 1",
+              "0.5 0.1 0.5 0.9", "0.4 0.15 0.6 0.85")
 ROW_STEP = 0.16               # seconds between rows appearing
 
 
@@ -438,13 +450,44 @@ def _compact_order(pts, w, h, order=8):
     return [p for _, p in keyed]
 
 
+def _kt_and_splines(rng):
+    """One path's clock: the six segment boundaries, nudged off the nominal ones.
+
+    Every path runs the same `dur`, so the loop still closes and the three
+    pictures still form; only the moment each handful of dots leaves and lands
+    moves. That is the whole trick behind "individual points" - identical
+    keyTimes across paths is what made the cloud look like sliding tiles.
+    """
+    k = [0.0]
+    for t in BASE_KT[1:-1]:
+        v = t + rng.uniform(-KT_JITTER, KT_JITTER)
+        k.append(max(v, k[-1] + 0.004))
+    k.append(1.0)
+    kt = ";".join(f"{v:.3f}".lstrip("0") or "0" for v in k)
+    sp = ";".join(rng.choice(SPLINE_SET) for _ in range(6))
+    return kt, sp
+
+
+def _wander(pts, sigma, rng):
+    """Shuffle a target layout locally, so neighbours stop travelling in step.
+
+    With both ends of a move in Hilbert order, dot i and dot i+1 start next to
+    each other and land next to each other: the whole neighbourhood glides as
+    one rigid piece. Displacing each dot by ~sigma places in that order sends it
+    to a slightly different part of the same small region, so adjacent dots set
+    off on crossing paths and the patch comes apart in flight - without the
+    long-haul deltas (and the file size) of a full random re-assignment.
+    """
+    keys = np.arange(len(pts), dtype=float) + rng.normal(0, sigma, len(pts))
+    return [pts[i] for i in np.argsort(keys, kind="stable")]
+
+
 def visual_map_svg(c, photo, px, py, pw, ph):
     """The animated point cloud: portrait -> Python -> neural net -> portrait.
 
-    Built the way a large cloud has to be if the file is to stay sane: the dots
-    are chunked into ~1k groups and each group is translated between the three
-    layouts with one <animateTransform>. Animating every dot individually, or
-    morphing path data, multiplies the file by the number of points.
+    Every dot is morphed to its exact position in each state (see `encode`),
+    in small groups on individually jittered clocks, so the cloud dissolves and
+    reassembles rather than sliding between layouts in formation.
     """
     rng = np.random.default_rng(11)
     res = stipple(photo, pw, ph)
@@ -461,9 +504,15 @@ def visual_map_svg(c, photo, px, py, pw, ph):
     ox, oy = (pw - tw) / 2, (ph - th) / 2
 
     home_pts = [(ox + x, oy + y, r) for x, y, r in _sample(a, N_POINTS, rng, DOT)]
+    # The portrait keeps its Hilbert order: it is what groups each path's dots
+    # into one small patch, which is what keeps the deltas one or two digits
+    # long. Only the two targets are stirred, and stirring a target changes
+    # which dot lands where, never which pixels are lit - the portrait itself
+    # is untouched.
     states = [_compact_order(home_pts, pw, ph)]
     for dens in _shapes(int(pw), int(ph)):
-        states.append(_compact_order(_sample(dens, N_POINTS, rng, DOT), pw, ph))
+        tgt = _compact_order(_sample(dens, N_POINTS, rng, DOT), pw, ph)
+        states.append(_wander(tgt, ORDER_SIGMA, rng))
 
     # Morph the path data itself rather than translating groups of dots.
     # A rigid <animateTransform> per group carries the portrait's local
@@ -494,10 +543,11 @@ def visual_map_svg(c, photo, px, py, pw, ph):
         if not ds[0]:
             break
         vals = ";".join([ds[0], ds[0], ds[1], ds[1], ds[2], ds[2], ds[0]])
+        kt, sp = _kt_and_splines(rng)
         out.append(
             f'<path d="{ds[0]}">'
-            f'<animate attributeName="d" values="{vals}" keyTimes="{KEYTIMES}" '
-            f'dur="{CYCLE}s" calcMode="spline" keySplines="{SPLINES}" '
+            f'<animate attributeName="d" values="{vals}" keyTimes="{kt}" '
+            f'dur="{CYCLE}s" calcMode="spline" keySplines="{sp}" '
             f'repeatCount="indefinite"/></path>')
 
     body = "\n".join(out)
