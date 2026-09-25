@@ -15,9 +15,9 @@
      after editing the LINES list in that script. If a change does not show up,
      GitHub is serving a cached copy - add ?v=2 (then v=3, ...) to the paths below. -->
 <picture>
-  <source media="(prefers-color-scheme: dark)"  srcset="assets/banner-dark.svg?v=3">
-  <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg?v=3">
-  <img src="assets/banner-dark.svg?v=3" width="94%" alt="profile.sh --live — stipple portrait and system info for Luna Pérez Troncoso, Data Scientist & AI Engineer, Madrid">
+  <source media="(prefers-color-scheme: dark)"  srcset="assets/banner-dark.svg?v=4">
+  <source media="(prefers-color-scheme: light)" srcset="assets/banner-light.svg?v=4">
+  <img src="assets/banner-dark.svg?v=4" width="94%" alt="profile.sh --live — stipple portrait and system info for Luna Pérez Troncoso, Data Scientist & AI Engineer, Madrid">
 </picture>
 
 </div>

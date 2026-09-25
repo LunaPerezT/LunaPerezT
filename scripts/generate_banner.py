@@ -100,7 +100,12 @@ CYCLE = 18                    # seconds for the full portrait->py->nn->portrait 
 # makes the drift read as slow rather than as a cut.
 BASE_KT = [0.0, 0.1333, 0.3333, 0.4667, 0.6667, 0.8000, 1.0]
 KT_JITTER = 0.030             # +/- 0.54s of departure and arrival scatter per path
-ORDER_SIGMA = 90              # how far a dot's target wanders from its neighbours'
+# Where a dot goes when the picture changes. "random": it draws a destination
+# anywhere in the next shape, so neighbours scatter to opposite corners and the
+# cloud passes through a formless state. A number instead keeps each
+# destination within roughly that many places of the tidy nearest assignment -
+# cheaper in bytes, because the path deltas stay short.
+ORDER_SCATTER = "random"
 # Near-linear eases with soft ends. The old ".4 0 .2 1" fired every dot out of
 # the gate together; these, varied per path, keep the middle of the flight calm.
 SPLINE_SET = ("0.45 0.05 0.55 0.95", "0.35 0 0.65 1",
@@ -468,18 +473,31 @@ def _kt_and_splines(rng):
     return kt, sp
 
 
-def _wander(pts, sigma, rng):
-    """Shuffle a target layout locally, so neighbours stop travelling in step.
+def _wander(pts, scatter, rng):
+    """Re-deal a target layout, so neighbours stop travelling in step.
 
     With both ends of a move in Hilbert order, dot i and dot i+1 start next to
     each other and land next to each other: the whole neighbourhood glides as
-    one rigid piece. Displacing each dot by ~sigma places in that order sends it
-    to a slightly different part of the same small region, so adjacent dots set
-    off on crossing paths and the patch comes apart in flight - without the
-    long-haul deltas (and the file size) of a full random re-assignment.
+    one rigid piece.
+
+    "random" deals every destination afresh - a dot from the hair can land in
+    the bottom of the logo - and the cloud goes through a formless state on the
+    way. It is the most disorderly option and also the most expensive: the path
+    deltas are then full-panel jumps ("m-347 219" against "m3 -1"), which is
+    paid once per dot per keyframe.
+
+    A number is the cheap middle ground: displacing each dot by ~that many
+    places in Hilbert order sends it elsewhere in the same small region, so
+    adjacent dots still set off on crossing paths and the patch still comes
+    apart, but the deltas stay two digits long.
     """
-    keys = np.arange(len(pts), dtype=float) + rng.normal(0, sigma, len(pts))
-    return [pts[i] for i in np.argsort(keys, kind="stable")]
+    n = len(pts)
+    if scatter == "random":
+        idx = rng.permutation(n)
+    else:
+        idx = np.argsort(np.arange(n, dtype=float) + rng.normal(0, scatter, n),
+                         kind="stable")
+    return [pts[i] for i in idx]
 
 
 def visual_map_svg(c, photo, px, py, pw, ph):
@@ -512,7 +530,7 @@ def visual_map_svg(c, photo, px, py, pw, ph):
     states = [_compact_order(home_pts, pw, ph)]
     for dens in _shapes(int(pw), int(ph)):
         tgt = _compact_order(_sample(dens, N_POINTS, rng, DOT), pw, ph)
-        states.append(_wander(tgt, ORDER_SIGMA, rng))
+        states.append(_wander(tgt, ORDER_SCATTER, rng))
 
     # Morph the path data itself rather than translating groups of dots.
     # A rigid <animateTransform> per group carries the portrait's local
