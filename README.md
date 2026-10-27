@@ -319,6 +319,9 @@ I care about **evaluation that survives scrutiny**: baselines that expose what a
 - **[Curso de MCP: Conecta LLMs y Agentes de IA con Apps Externas](https://www.udemy.com/certificate/UC-36fbf563-a3c5-4541-8cb9-952ad3fb24a1/)** &nbsp;·&nbsp; 8 h · 59 lessons · Santiago Hernández · Sep 2026
   <br>Model Context Protocol end to end — building MCP servers and clients, tool exposure and connecting agents to external systems. The protocol behind [CATBOX](https://github.com/LunaPerezT/CATBOX_SQL_AI_Agent).
 
+- **[Curso Completo: LangChain, LangGraph y Agentes IA con Python](https://www.udemy.com/certificate/UC-ef7a9df0-ed15-43d5-afca-d26a1ceec295/)** &nbsp;·&nbsp; 18 h · 149 lessons · Santiago Hernández · Oct 2026
+  <br>Agent orchestration in Python — chains, tools and memory in LangChain, then stateful multi-step agent graphs in LangGraph. The layer that sits on top of the MCP tooling in the course above.
+
 <br>
 
 ## 🌟 Featured Projects
